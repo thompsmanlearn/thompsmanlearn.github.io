@@ -42,6 +42,19 @@
     .stat-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
     .footer { margin-top: 48px; font-size: .8rem; color: var(--muted); text-align: center; }
     .footer a { color: var(--accent); text-decoration: none; }
+    .project-card { background: var(--surface); border: 1px solid var(--border);
+                     border-radius: 8px; padding: 16px; }
+    .project-title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+    .project-goal { font-size: .85rem; color: var(--muted); margin-bottom: 12px; }
+    .progress-bar-wrap { background: var(--border); border-radius: 4px; height: 6px; margin-bottom: 4px; }
+    .progress-bar { background: var(--accent); border-radius: 4px; height: 6px; transition: width .3s; }
+    .progress-label { font-size: .75rem; color: var(--muted); margin-bottom: 12px; }
+    .node-list { display: flex; flex-direction: column; gap: 6px; }
+    .node-row { display: flex; align-items: center; gap: 8px; font-size: .9rem; }
+    .node-icon { font-size: 1rem; width: 20px; flex-shrink: 0; }
+    .node-name { flex: 1; }
+    .node-type { font-size: .7rem; color: var(--muted); background: var(--border);
+                  padding: 1px 6px; border-radius: 8px; }
     @media (max-width: 480px) { h1 { font-size: 1.3rem; } .stat-row { gap: 16px; } }
   </style>
 </head>
@@ -92,6 +105,26 @@
     <div class="next-text">Write a session artifact titled &quot;site-loop-test&quot; that describes what AADP is, what was built today (the GitHub Pages site at thompsmanlearn.github.io, the EmbedControl Anvil form, and the direction loop), and what the system can do right now. Keep it under 300 words. No code changes needed — just the artifact.</div>
   </div>
 
+  <h2>Active Project</h2>
+  <div class="project-card">
+    <div class="project-title">Document AADP on the Site</div>
+    <div class="project-goal">Build out thompsmanlearn.github.io into a full multi-page site documenting what AADP is, what it can do, how it works, and what is being built — visible to Bill…</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" style="width:12%"></div>
+    </div>
+    <div class="progress-label">1 of 8 nodes complete</div>
+    <div class="node-list">
+    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Home page refinement</span><span class="node-type">write</span></div>
+    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Fleet page</span><span class="node-type">build</span></div>
+    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Capabilities page</span><span class="node-type">write</span></div>
+    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Architecture page</span><span class="node-type">write</span></div>
+    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Session log page</span><span class="node-type">build</span></div>
+    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Direction log page</span><span class="node-type">build</span></div>
+    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Navigation and multi-page structure</span><span class="node-type">build</span></div>
+    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Site polish</span><span class="node-type">polish</span></div>
+    </div>
+  </div>
+
   <h2>Give Direction</h2>
   <iframe
     src="https://inborn-rotating-anole.anvil.app#EmbedControl"
@@ -118,7 +151,7 @@
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-04-19 20:05 UTC
+    Generated 2026-04-19 20:18 UTC
   </div>
 
 </body>
