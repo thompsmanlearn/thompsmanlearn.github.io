@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-04-19T00:00:00Z",
+  "system": "online",
+  "mode": "lean",
+  "agent_count": 25,
+  "lesson_count": 214,
+  "last_sessions": [
+    {
+      "date": "2026-04-18",
+      "descriptor": "skills-tab-b041",
+      "outcome": "Added Skills tab to Anvil dashboard with registry and file content viewer"
+    },
+    {
+      "date": "2026-04-18",
+      "descriptor": "B040-memory-tab",
+      "outcome": "Added Memory tab with ChromaDB browser and curated Supabase views"
+    },
+    {
+      "date": "2026-04-18",
+      "descriptor": "sessions-tab-b039",
+      "outcome": "Added Sessions tab with live phase display and artifact history drill-down"
+    }
+  ],
+  "current_directive": "Build the one-page loop — GitHub Pages site + embeddable Anvil control form",
+  "next_unblocked": "Wire Anvil embed into site once Bill publishes the app URL",
+  "open_questions": []
+}
