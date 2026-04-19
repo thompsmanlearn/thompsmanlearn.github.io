@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T20:18:12.154391+00:00",
+  "generated_at": "2026-04-19T20:37:19.564427+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 18,
@@ -9,6 +9,11 @@
       "date": "2026-04-19",
       "descriptor": "Session: 2026-04-19 \u2014 site-loop-test",
       "outcome": ""
+    },
+    {
+      "date": "2026-04-19",
+      "descriptor": "Session: 2026-04-19 \u2014 One-page loop + project graph",
+      "outcome": "**thompsmanlearn.github.io** \u2014 repo created, GitHub Pages live. index.html (dynamic, generated from live data) and status.json (machine-readable state\u2026"
     },
     {
       "date": "2026-04-18",
@@ -24,12 +29,7 @@
       "date": "2026-04-18",
       "descriptor": "Session: 2026-04-18 \u2014 Sessions tab (B-039)",
       "outcome": "Loads SUPABASE_URL and SUPABASE_SERVICE_KEY from .env at startup"
-    },
-    {
-      "date": "2026-04-18",
-      "descriptor": "Session: 2026-04-18 \u2014 lessons-tab",
-      "outcome": "get_lessons(filter, limit) \u2014 Supabase query for recent/most_applied/never_applied/broken views"
     }
   ],
-  "current_directive": "Write a session artifact titled \"site-loop-test\" that describes what AADP is, what was built today (the GitHub Pages site at thompsmanlearn.github.io, the EmbedControl Anvil form, and the direction loop), and what the system can do right now. Keep it under 300 words. No code changes needed \u2014 just the artifact."
+  "current_directive": "Run: B-042"
 }

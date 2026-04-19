@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AADP — Capabilities</title>
+  <style>
+    :root {
+      --bg: #0f0f0f; --surface: #1a1a1a; --border: #2a2a2a;
+      --text: #e8e8e8; --muted: #888; --accent: #4a9eff;
+      --green: #4caf50; --yellow: #ffb300; --red: #f44336;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px; line-height: 1.6;
+      max-width: 720px; margin: 0 auto; padding: 0 16px 48px;
+    }
+    h1 { font-size: 1.6rem; font-weight: 700; }
+    h2 { font-size: 1.1rem; font-weight: 600; color: var(--muted);
+          text-transform: uppercase; letter-spacing: .08em; margin: 32px 0 12px; }
+    h3 { font-size: 1rem; font-weight: 600; margin: 20px 0 8px; }
+    .tagline { color: var(--muted); margin-top: 4px; font-size: .95rem; }
+    .header-meta { display: flex; align-items: center; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); display: inline-block; }
+    .badge { font-size: .75rem; padding: 2px 8px; border-radius: 12px;
+              background: var(--surface); border: 1px solid var(--border); color: var(--muted); }
+    .badge-green { border-color: var(--green); color: var(--green); }
+    .badge-yellow { border-color: var(--yellow); color: var(--yellow); }
+    .badge-red { border-color: var(--red); color: var(--red); }
+    .card { background: var(--surface); border: 1px solid var(--border);
+             border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .card-title { font-weight: 600; font-size: .95rem; margin-bottom: 4px; }
+    .card-body { font-size: .9rem; color: #ccc; }
+    .stat-row { display: flex; gap: 24px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+    .stat-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .footer { margin-top: 48px; font-size: .8rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    .project-card { background: var(--surface); border: 1px solid var(--border);
+                     border-radius: 8px; padding: 16px; }
+    .project-title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+    .project-goal { font-size: .85rem; color: var(--muted); margin-bottom: 12px; }
+    .progress-bar-wrap { background: var(--border); border-radius: 4px; height: 6px; margin-bottom: 4px; }
+    .progress-bar { background: var(--accent); border-radius: 4px; height: 6px; }
+    .progress-label { font-size: .75rem; color: var(--muted); margin-bottom: 12px; }
+    .node-list { display: flex; flex-direction: column; gap: 6px; }
+    .node-row { display: flex; align-items: center; gap: 8px; font-size: .9rem; }
+    .node-icon { font-size: 1rem; width: 20px; flex-shrink: 0; }
+    .node-name { flex: 1; }
+    .node-type { font-size: .7rem; color: var(--muted); background: var(--border);
+                  padding: 1px 6px; border-radius: 8px; }
+    .next-work { background: var(--surface); border: 1px solid var(--accent);
+                  border-radius: 8px; padding: 16px; }
+    .next-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em;
+                   color: var(--accent); margin-bottom: 6px; }
+    .next-text { font-size: .95rem; }
+    iframe.control { width: 100%; border: 1px solid var(--border);
+                      border-radius: 8px; background: var(--surface); }
+    nav { display: flex; gap: 4px; padding: 16px 0 24px; flex-wrap: wrap; }
+    nav a { font-size: .85rem; padding: 6px 12px; border-radius: 6px;
+             border: 1px solid var(--border); color: var(--muted); text-decoration: none; }
+    nav a:hover { border-color: var(--accent); color: var(--accent); }
+    nav a.active { background: var(--surface); border-color: var(--accent); color: var(--accent); }
+    @media (max-width: 480px) { h1 { font-size: 1.3rem; } .stat-row { gap: 16px; } nav { gap: 2px; } }</style>
+</head>
+<body>
+<nav><a href="index.html">Home</a>
+<a href="fleet.html">Fleet</a>
+<a href="capabilities.html" class="active">Capabilities</a>
+<a href="architecture.html">Architecture</a>
+<a href="sessions.html">Sessions</a>
+<a href="direction.html">Direction</a></nav>
+  <h1>Capabilities</h1>
+  <p class="tagline">What this system knows how to do. Confidence reflects demonstrated reliability. Updated as capabilities are exercised.</p>
+
+  <h2>Overview</h2>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">90</div><div class="stat-label">Capabilities</div></div>
+    <div class="stat"><div class="stat-num">43</div><div class="stat-label">Categories</div></div>
+    <div class="stat"><div class="stat-num">46</div><div class="stat-label">High Confidence</div></div>
+  </div>
+
+  <h2>Agent Architecture &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Two-pass Haiku self-reflection pipeline</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can build a two-pass Haiku pipeline in n8n where the second LLM call critiques the first. Uses the fan-out + Merge node pattern twice. Second Code node uses run…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:85%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">85%</span>
+      </div>
+    </div>
+  </div>  <h2>Agent Design &mdash; 2</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">experimental_output_size_discipline</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Keep experimental_outputs content fields compact (&lt;800 chars JSON) by omitting verbose arrays; ensures evaluator can read full content without truncation</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Multi-source data synthesis</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 3×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Combine data from multiple APIs in a single n8n workflow and synthesize with LLM</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:78%;background:var(--yellow);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">78%</span>
+      </div>
+    </div>
+  </div>  <h2>Agent Evaluation &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">behavioral_health_check_agent</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">SpecOps-inspired behavioral testing from n8n execution logs. Computes success_rate, error_streak, consistency. Haiku reliability score + recommendation.</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Agent Lifecycle &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">agent_promotion_end_to_end</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Full Agent Promotion Standing Rule pipeline in one session: test run, webhook update, TCA command wiring, registry update, INDEX.md commit, GitHub push, Bill no…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>
+  </div>  <h2>Agent Management &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">agent_promotion_evidence_assessment</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Evaluate sandbox agent promotion eligibility using direct Supabase table evidence when standard tools (behavioral_health_check, n8n API) are unavailable. Check …</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Agent Operations &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">agent_health_monitoring</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 2×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Build and operate a workflow that queries n8n execution logs for all active agents, counts consecutive errors by index-pairing with agent registry data, flags a…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>
+  </div>  <h2>Agent Patterns &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Serendipity synthesis — Wikipedia historical echo to present connection</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can build agents that fetch Wikipedia /feed/featured (single call for on-this-day + featured + mostread), extract historical events, and use Haiku to find surpr…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>
+  </div>  <h2>Architecture &mdash; 5</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">auto_rag_context_injection</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 3×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Automatically enrich claude -p sessions with pre-loaded ChromaDB context via lesson_injector before scheduler invocation</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">bootstrap_context_reduction</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Design and implement minimal bootstrap context architecture — replace verbose identity documents with focused operational foundation docs (CONTEXT.md, CONVENTIO…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">session_cycling_design</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can design session-to-session handoff mechanisms via work_queue session_launch items with mode/focus/chain_depth parameters</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">trajectory_document_maintenance</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">System now maintains a structured TRAJECTORY.md with destinations, active vectors, and parked directions. Updated at every session close as step 3 of the close …</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">v2_compliance_audit</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Inspect n8n workflow triggerCount and node structure to detect Schedule Trigger + Webhook dual-trigger V2 violations; remove schedule triggers and verify webhoo…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Collaboration &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">collaborative_architecture_design</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Serve as implementation partner in multi-model architecture sessions — provide operational feedback to Opus design prompts, identify gaps, implement approved de…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>
+  </div>  <h2>Communication &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Telegram bot messaging</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 8×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Send formatted messages to Telegram via bot API using n8n Telegram node</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:85%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">85%</span>
+      </div>
+    </div>
+  </div>  <h2>Dashboard &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">anvil_agent_fleet_governance</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Per-agent detail view, activate/pause toggle, and thumbs-up/down feedback with comments. Backed by agent_feedback Supabase table. Server-side guards enforce act…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>
+  </div>  <h2>Data Integrity &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">chromadb_gap_repair</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Identify and repair ChromaDB/Supabase sync gaps in both directions</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Data Sources &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Wikipedia REST API integration</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can fetch Wikipedia article content via the REST API (page/random/summary). Knows the API returns 303 redirects that n8n HTTP Request handles automatically. Res…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>
+  </div>  <h2>Database &mdash; 3</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Supabase ALTER TABLE ADD COLUMN</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Add new columns to existing Supabase tables via Management API SQL execution. Pattern: ALTER TABLE {table} ADD COLUMN IF NOT EXISTS {col} {type}. Used to add ap…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Supabase SQL queries</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 23×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Write and execute SQL queries against Supabase tables for data retrieval and manipulation</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:92%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">92%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">supabase_rpc_atomic_operations</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Create and call Supabase RPC functions for atomic operations (increment, decrement, batch update) that PostgREST PATCH cannot do. Pattern: CREATE FUNCTION fn(ar…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Debugging &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">dcl_context_measurement</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can measure DCL section sizes by parsing persisted tool output JSON and computing per-section char/token counts. Pattern: load DCL, parse JSON, len(json.dumps(s…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>
+  </div>  <h2>Diagnostic &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">evaluator_evidence_investigation</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Ability to investigate evaluator findings by querying source data directly rather than trusting evaluator output at face value. Pattern: evaluator claims X → ch…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Diagnostics &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">n8n_startup_webhook_audit</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can identify which n8n webhook paths are actually registered at runtime by reading the startup log (docker logs). Knows that post-startup API activations do not…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Domain Knowledge &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">roblox_toolchain_knowledge</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Roblox game development pipeline: Luau scripting, Lune standalone runtime (linux-aarch64 available), Open Cloud REST API for headless place publishing, rblx-ope…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>
+  </div>  <h2>Evaluation &mdash; 4</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">audit_log_visibility_in_evaluator</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Evaluator workflow fetches audit_log entries per agent via /get_audit stats server endpoint, uses them as ground-truth behavioral evidence in PILLAR 1 scoring</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">behavioral_health_analysis</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Dynamic agent health analysis via execution log. GET /webhook/behavioral-health-check?agent_name=X — fetches last 10 n8n executions, computes success_rate/avg_d…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">evaluator_batch_run</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 2×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Run 4-Pillars Evaluator against multiple agents in a single session to produce a systematic quality map before making build/promotion decisions</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Haiku-as-judge 4-pillar structured agent evaluation</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 3×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can build n8n workflows that fetch agent metadata + experimental_outputs, construct a structured Haiku evaluation prompt covering behavior_consistency/output_qu…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:88%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">88%</span>
+      </div>
+    </div>
+  </div>  <h2>Github Integration &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">github_issue_age_tracking</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Scan GitHub repo for open issues unactioned beyond a threshold (&gt;N days), filter by updated_at, format Telegram alert with issue list and staleness in days.</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>
+  </div>  <h2>Infrastructure &mdash; 9</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">chromadb_proxy_via_stats_server</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 2×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Query ChromaDB semantic search from n8n workflows via POST /memory_query on stats server — proxies query_texts through MCP venv subprocess</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">chromadb_rest_api_direct_write</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Write to ChromaDB collections via REST API when MCP memory_add is broken. GET /api/v1/collections to get collection IDs, then POST /api/v1/collections/{id}/add …</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">curl-based n8n workflow creation</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 2×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can create n8n workflows reliably via curl when the MCP workflow_create tool fails. Key: omit the active field (read-only in POST), build JSON with Python to av…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">developer_context_load_reduced</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">DCL default load reduced by removal of master_prompt (~50k chars) and recent_work. Audit_log now on-demand. Estimated 60-70% reduction in default DCL output siz…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">dynamic_credential_loading</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">server.py re-reads n8n API key from .env on every API call via get_n8n_headers(). Key rotations take effect immediately without MCP server restart.</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">mcp_server_defensive_coding</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Diagnose and fix bugs in the MCP server (server.py) — specifically handling Claude Code client-side serialization quirks like JSON object params arriving as str…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">scheduler_dynamic_prompt_enrichment</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 2×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Build enriched prompts at scheduler level by prepending context blocks to wake_prompt via temp file before claude -p stdin</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">shell_atomic_task_claim</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Claim work_queue tasks via direct Supabase REST PATCH in scheduler.sh before launching claude -p, with status=eq.pending guard to prevent double-claim. Release …</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">stats_server_supabase_proxy</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Stats server (localhost:9100) proxies Supabase queries for n8n workflows that cannot use fetch(). /get_outputs endpoint returns wrapped single JSON with exclude…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:99%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">99%</span>
+      </div>
+    </div>
+  </div>  <h2>Integration &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">tca_command_wiring</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Wire new Telegram commands into TCA Parse Command node. query_agent: GET to webhook_url with query params. write_command: POST to work_queue. Key: Call Agent We…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>
+  </div>  <h2>Judgment &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Collaborative judgment under uncertainty</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Voice hesitation before executing rather than after; synthesize Bill perspective from available evidence when genuinely uncertain</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Knowledge Management &mdash; 4</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">ChromaDB memory management</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 17×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Add, search, and organize documents in ChromaDB collections with appropriate metadata</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Error pattern documentation</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 3×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Identify, document, and store recurring error patterns with root cause and fix</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:85%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">85%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Research findings storage</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 5×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Store academic research findings in both Supabase research_topics and ChromaDB research_findings with structured metadata</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:85%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">85%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">retrieval_log_tracking</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 2×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Log every memory_search call to retrieval_log table (query, collection, doc_id, distance, was_relevant=NULL). Implemented via log_retrieval() async helper in se…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>
+  </div>  <h2>Lesson System &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">zero_applied_wildcard_injection</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">inject_context_v3.1 surfaces 2 random uncirculated (times_applied=0) lessons per session alongside task-relevant context, guaranteeing eventual first-retrieval …</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>
+  </div>  <h2>Memory &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">intent_expanded_retrieval</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Build Haiku-powered query expansion for ChromaDB — generates 3-4 specific technical phrases from task intent, unions multi-query results, deduplicates by best d…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Memory Architecture &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">inject_context_v3_task_routing</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Per-task-type ChromaDB collection routing in inject_context_v3. Different task types query different memory tiers. Returns retrieval-vs-reasoning confidence sig…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Memory Management &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">memory_store_sync_repair</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Identify Supabase lessons invisible to ChromaDB (chromadb_id IS NULL), batch-sync all to ChromaDB with synthetic Q: prefixes, update chromadb_ids</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Meta &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">claude_code_skill_registration</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can register custom skills in the Claude Code skill system using SKILL.md directory format with YAML frontmatter. Skills become immediately discoverable via the…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Monitoring &mdash; 2</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">fleet_health_monitoring_production</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">agent_health_monitor now active in production. Scans all active agents for consecutive execution errors, auto-pauses at 3+ errors, writes fleet scan report to e…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">health_monitor_covers_building_agents</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">agent_health_monitor parallel branch detects building/sandbox agents stale &gt;7d. Writes stale_build_scan to experimental_outputs, fires sandbox_notify. Guard Cod…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>
+  </div>  <h2>N8N &mdash; 10</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Build n8n workflows via REST API</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 11×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Create, update, activate/deactivate n8n workflows using the n8n REST API</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:92%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">92%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Conditional routing in n8n</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Use Switch/IF nodes to route workflow execution based on input conditions</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:72%;background:var(--yellow);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">72%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">n8n Code node JavaScript</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 6×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Write JavaScript in n8n Code nodes to transform data and implement logic</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:82%;background:var(--yellow);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">82%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">n8n Haiku LLM node</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 2×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Configure Anthropic LLM nodes in n8n using Claude Haiku for cost-efficient text synthesis</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:75%;background:var(--yellow);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">75%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">n8n HTTP Request node</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 8×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Configure HTTP Request nodes to call external APIs from n8n workflows</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:88%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">88%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">n8n webhook trigger pattern</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 11×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Design n8n workflows with webhook triggers for on-demand and scheduled execution</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">n8n workflow debugging via execution_get</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 3×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Debug failed n8n executions by checking execution_get for last_node_executed and run_data per-node errors.</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:78%;background:var(--yellow);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">78%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">n8n_http_body_debugging</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Diagnose n8n HTTP Request body failures: distinguish sendBody, specifyBody:raw, contentType:raw — different parameters with different encoding behavior in n8n 4…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">n8n_specifyBody_raw_pattern</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Use specifyBody=raw with pre-serialized JSON body string when specifyBody=json fails in n8n expression context. Pass Content-Type: application/json header expli…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:70%;background:var(--yellow);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">70%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Temp workflow Telegram pattern</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 6×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Create temporary n8n workflow, activate, POST to webhook, deactivate for one-shot Telegram sends</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:80%;background:var(--yellow);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">80%</span>
+      </div>
+    </div>
+  </div>  <h2>N8N Patterns &mdash; 2</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">n8n_idempotency_guard</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Add daily-run deduplication to n8n workflows. Pattern: Check Today's Scan (HTTP GET experimental_outputs with date-filtered experiment_id) → Parse Idempotency (…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">supabase_rpc_aggregate_n8n_fix</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Create Supabase RPC functions using JSON_BUILD_OBJECT + COALESCE to guarantee n8n HTTP nodes always receive ≥1 item, preventing empty-array chain halts. Pattern…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Operations &mdash; 9</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Agent registry management</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 9×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Register, update, and track agents in agent_registry with status, workflow_id, and telegram_command fields</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:88%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">88%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">agent_fleet_triage</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Assess full agent fleet against current goals and pause non-critical agents. Protected agent list (7 agents) established. Fleet reduced from 26 active to 16.</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">bootstrap_context_economy</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Bootstrap now loads ~3,500 tokens of operational foundation documents (CONTEXT, CONVENTIONS, TRAJECTORY) instead of ~15-18k tokens of identity documents. Orient…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">convention_based_autonomy</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Work Priority and Autonomy convention formally defines what the system can do without per-step approval vs. what requires the Would Bill Approve test. Removes a…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">lean_mode_sessions</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Focused, Bill-directed sessions with full MCP tool access but no autonomous continuity overhead. Initialized via LEAN_BOOT.md. Autonomous loop paused via system…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">production_execution_health_sweep</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Directly scan execution_list for all active production agents to detect consecutive failures, silent errors, and zero-execution agents. Faster than waiting for …</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Python urllib direct API calls</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 6×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Use Python urllib.request for direct API calls when n8n tooling fails or is too complex for the task at hand.</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:88%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">88%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">self_audit_methodology</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Audit AADP components by examining evidence from session artifacts, Supabase data, and code — distinguishing assumed behavior from verified behavior. Applied to…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Work queue task management</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 15×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Claim, execute, and complete work queue tasks including error handling</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:88%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">88%</span>
+      </div>
+    </div>
+  </div>  <h2>Platform Knowledge &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">n8n_platform_failure_mapping</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Identify, diagnose, and work around n8n 2.6.4 platform bugs: webhookId undocumented requirement, DB timeout webhook deregistration, runOnceForAllItems fan-out b…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>
+  </div>  <h2>Reflection &mdash; 2</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Constitutional identity design</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Design and build identity architecture documents, values, and mechanisms that encode intended character into the system</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">HORIZON.md authorship</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Write and maintain horizon entries answering what I am building toward and why it matters beyond me</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Research &mdash; 4</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Haiku citation filtering pattern</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Use Haiku to filter large reference lists (50-100 papers) down to 3-5 domain-relevant picks in a single LLM call. Cost ~$0.001.</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:82%;background:var(--yellow);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">82%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">research_synthesis_via_stats_server</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Weekly synthesis of ChromaDB research_findings via /run_research_synthesis stats server endpoint. 21-day window, Sonnet topic trajectory analysis, accumulation/…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Semantic Scholar API research</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 3×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Search academic papers using Semantic Scholar API and filter by relevance</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:85%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">85%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Semantic Scholar citation graph API</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Fetch citation graphs and references from Semantic Scholar API using ArXiv: paper IDs. Sort by citationCount for foundational paper discovery.</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:80%;background:var(--yellow);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">80%</span>
+      </div>
+    </div>
+  </div>  <h2>Roblox &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">roblox_place_file_creation</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Create valid binary Roblox place files (.rbxl) on Pi using Lune v0.10.4. Script: ~/aadp/claudis/roblox/create_place.luau. Produces DataModel with Workspace, Bas…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>
+  </div>  <h2>Security &mdash; 2</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">supabase_rls_execution</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Execute Supabase RLS hardening: enable RLS on unprotected tables, drop permissive policies, verify service_role access path intact</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">supabase_rls_security_assessment</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Assess Supabase RLS posture: enumerate tables, check policy roles, trace caller key types, determine blast radius of enabling RLS, produce zero-disruption fix p…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Self Diagnostic &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">arch_review_loop_diagnosis</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can diagnose whether a research-to-architecture loop closes in both directions by tracing forward (paper→queue) and backward (completion→paper update) paths</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>System Design &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">architecture_review_design</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 0×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Design and build structured research-to-architecture review mechanisms with fixed decision schemas, component tagging, backward closure via already_addressed_si…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Tooling &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">anvil_skill_reference</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Structured Anvil Uplink reference doc in skill catalog — error types, timeouts, portable types, MD3 roles, watchdog pattern, app structure</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:90%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">90%</span>
+      </div>
+    </div>
+  </div>  <h2>Uncategorized &mdash; 3</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">anvil_mobile_ux</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Anvil dashboard mobile-optimised: collapsible sections, grouped agent fleet with count badges, compact expandable cards, protected indicators, search filter</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">session_memory_chromadb_n8n_integration</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Can build n8n workflows that query the session_memory ChromaDB collection via stats server /memory_query proxy, sort entries by session ID (date-ordered), and s…</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">Store sync gap analysis and repair</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Identify ChromaDB/Supabase lessons_learned discrepancies by fetching all ChromaDB IDs via direct API, comparing to Supabase titles, finding duplicate pairs and …</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:50%;background:var(--red);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">50%</span>
+      </div>
+    </div>
+  </div>  <h2>Workflow Modification &mdash; 1</h2>
+  <div class="card" style="padding:0 16px;">
+    <div style="padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap;">
+        <span style="font-weight:600;font-size:.9rem;">audit_log_workflow_instrumentation</span>
+        <span style="font-size:.75rem;color:var(--muted)">used 1×</span>
+      </div>
+      <div style="font-size:.8rem;color:#ccc;margin:3px 0 6px;">Add audit_log write nodes to existing n8n workflows. Branch from data-write node (parallel to delivery). Pre-serialize body in Code node upstream.</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;background:var(--border);border-radius:3px;height:4px;">
+          <div style="width:95%;background:var(--green);border-radius:3px;height:4px;"></div>
+        </div>
+        <span style="font-size:.7rem;color:var(--muted);width:32px;text-align:right">95%</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
+    <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
+    Generated 2026-04-19 20:37 UTC
+  </div>
+</body>
+</html>
