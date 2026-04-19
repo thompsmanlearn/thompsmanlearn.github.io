@@ -6,84 +6,43 @@
   <title>AADP — Autonomous Agent Development Platform</title>
   <style>
     :root {
-      --bg: #0f0f0f;
-      --surface: #1a1a1a;
-      --border: #2a2a2a;
-      --text: #e8e8e8;
-      --muted: #888;
-      --accent: #4a9eff;
-      --green: #4caf50;
-      --yellow: #ffb300;
-      --red: #f44336;
+      --bg: #0f0f0f; --surface: #1a1a1a; --border: #2a2a2a;
+      --text: #e8e8e8; --muted: #888; --accent: #4a9eff;
+      --green: #4caf50; --yellow: #ffb300; --red: #f44336;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: var(--bg);
-      color: var(--text);
+      background: var(--bg); color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 24px 16px 48px;
+      font-size: 16px; line-height: 1.6;
+      max-width: 720px; margin: 0 auto; padding: 24px 16px 48px;
     }
-    h1 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
-    h2 { font-size: 1.1rem; font-weight: 600; color: var(--muted); text-transform: uppercase;
-         letter-spacing: 0.08em; margin: 32px 0 12px; }
-    .tagline { color: var(--muted); margin-top: 4px; font-size: 0.95rem; }
-    .header-meta { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+    h1 { font-size: 1.6rem; font-weight: 700; }
+    h2 { font-size: 1.1rem; font-weight: 600; color: var(--muted);
+          text-transform: uppercase; letter-spacing: .08em; margin: 32px 0 12px; }
+    .tagline { color: var(--muted); margin-top: 4px; font-size: .95rem; }
+    .header-meta { display: flex; align-items: center; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
     .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); display: inline-block; }
-    .dot.offline { background: var(--red); }
-    .badge {
-      font-size: 0.75rem; padding: 2px 8px; border-radius: 12px;
-      background: var(--surface); border: 1px solid var(--border); color: var(--muted);
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px;
-      margin-bottom: 12px;
-    }
-    .card-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
-    .card-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; }
-    .card-body { font-size: 0.9rem; color: #ccc; }
-    .next-work {
-      background: var(--surface);
-      border: 1px solid var(--accent);
-      border-radius: 8px;
-      padding: 16px;
-    }
-    .next-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;
-                  color: var(--accent); margin-bottom: 6px; }
-    .next-text { font-size: 0.95rem; }
-    .embed-placeholder {
-      background: var(--surface);
-      border: 2px dashed var(--border);
-      border-radius: 8px;
-      padding: 32px 16px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    .embed-placeholder .label { font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    iframe.control {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--surface);
-    }
-    .footer { margin-top: 48px; font-size: 0.8rem; color: var(--muted); text-align: center; }
-    .footer a { color: var(--accent); text-decoration: none; }
-    .divider { border: none; border-top: 1px solid var(--border); margin: 8px 0; }
+    .badge { font-size: .75rem; padding: 2px 8px; border-radius: 12px;
+              background: var(--surface); border: 1px solid var(--border); color: var(--muted); }
+    .card { background: var(--surface); border: 1px solid var(--border);
+             border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .card-title { font-weight: 600; font-size: .95rem; margin-bottom: 4px; }
+    .card-body { font-size: .9rem; color: #ccc; }
+    .next-work { background: var(--surface); border: 1px solid var(--accent);
+                  border-radius: 8px; padding: 16px; }
+    .next-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em;
+                   color: var(--accent); margin-bottom: 6px; }
+    .next-text { font-size: .95rem; }
+    iframe.control { width: 100%; border: 1px solid var(--border);
+                      border-radius: 8px; background: var(--surface); }
     .stat-row { display: flex; gap: 24px; flex-wrap: wrap; }
     .stat { text-align: center; }
     .stat-num { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
-    .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-    @media (max-width: 480px) {
-      h1 { font-size: 1.3rem; }
-      .stat-row { gap: 16px; }
-    }
+    .stat-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .footer { margin-top: 48px; font-size: .8rem; color: var(--muted); text-align: center; }
+    .footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 480px) { h1 { font-size: 1.3rem; } .stat-row { gap: 16px; } }
   </style>
 </head>
 <body>
@@ -92,43 +51,45 @@
   <p class="tagline">Autonomous Agent Development Platform &mdash; a Raspberry Pi 5 that builds itself.</p>
   <div class="header-meta">
     <span class="dot"></span>
-    <span style="font-size:0.85rem; color:var(--muted)">Online</span>
+    <span style="font-size:.85rem;color:var(--muted)">Online</span>
     <span class="badge">Lean Mode</span>
-    <span class="badge">Apr 2026</span>
+    <span class="badge">Updated 2026-04-19</span>
   </div>
 
   <h2>System at a Glance</h2>
   <div class="stat-row">
-    <div class="stat"><div class="stat-num">25</div><div class="stat-label">Agents</div></div>
-    <div class="stat"><div class="stat-num">214</div><div class="stat-label">Lessons</div></div>
+    <div class="stat"><div class="stat-num">18</div><div class="stat-label">Active Agents</div></div>
+    <div class="stat"><div class="stat-num">231</div><div class="stat-label">Lessons</div></div>
     <div class="stat"><div class="stat-num">6</div><div class="stat-label">Skills</div></div>
-    <div class="stat"><div class="stat-num">B-041</div><div class="stat-label">Last Card</div></div>
+    <div class="stat"><div class="stat-num">—</div><div class="stat-label">Last Card</div></div>
   </div>
 
   <h2>Recent Sessions</h2>
-
   <div class="card">
-    <div class="card-title">Skills tab (B-041) &mdash; 2026-04-18</div>
-    <div class="card-meta">Anvil dashboard</div>
-    <div class="card-body">Added Skills tab to Anvil dashboard. Created <code>skills_registry</code> table in Supabase, populated with 6 skills. Uplink callables <code>get_skills()</code> and <code>get_skill(name)</code> added. Content viewer reads skill files from filesystem on demand.</div>
+    <div class="card-title">Session: 2026-04-18 — strategy-anvil-direction &mdash; 2026-04-18</div>
+    <div class="card-body">**BACKLOG.md** — B-026 (Bill: Anvil setup) and B-027 (Claude Code: uplink service + dashboard) added</div>
   </div>
-
   <div class="card">
-    <div class="card-title">Memory tab (B-040) &mdash; 2026-04-18</div>
-    <div class="card-meta">Anvil dashboard</div>
-    <div class="card-body">Added Memory tab with ChromaDB collection browser (paginated, semantic search) and curated Supabase views for research papers and error log. Five new uplink callables.</div>
+    <div class="card-title">Session: 2026-04-18 — Skills tab (B-041) &mdash; 2026-04-18</div>
+    <div class="card-body">**Supabase**: Created skills_registry table with schema from B-041 card. Populated with all 6 skills from CATALOG.md: agent-development, research, sys…</div>
   </div>
-
   <div class="card">
-    <div class="card-title">Sessions tab (B-039) &mdash; 2026-04-18</div>
-    <div class="card-meta">Anvil dashboard</div>
-    <div class="card-body">Added Sessions tab showing live session phase and card ID, plus last 15 session artifacts with full content drill-down. Created <code>session_status</code> table; lean_runner.sh writes phase updates.</div>
+    <div class="card-title">Session: 2026-04-18 — Sessions tab (B-039) &mdash; 2026-04-18</div>
+    <div class="card-body">Loads SUPABASE_URL and SUPABASE_SERVICE_KEY from .env at startup</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Session: 2026-04-18 — lessons-tab &mdash; 2026-04-18</div>
+    <div class="card-body">get_lessons(filter, limit) — Supabase query for recent/most_applied/never_applied/broken views</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Session: 2026-04-18 — lean-status-indicator &mdash; 2026-04-18</div>
+    <div class="card-body">anvil/uplink_server.py: Added get_lean_status() callable. Uses ps aux to detect running claude -p processes. Returns {&quot;running&quot;: bool, &quot;pid&quot;: int|None…</div>
   </div>
 
   <h2>Current Focus</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text">Build the one-page loop &mdash; GitHub Pages site + embeddable Anvil control form. Prove: Bill reads site, types direction, hits start, sees output in same place.</div>
+    <div class="next-text">Test from site.  Hello from Bill</div>
   </div>
 
   <h2>Give Direction</h2>
@@ -144,15 +105,20 @@
   <h2>What This System Is</h2>
   <div class="card">
     <div class="card-body">
-      AADP runs on a Raspberry Pi 5 (16GB) in Bill&rsquo;s home. It&rsquo;s always on. It runs ~25 n8n workflow agents that monitor system health, ingest research, synthesize findings, and manage a growing library of operational lessons. Claude Code is the primary builder &mdash; it reads directives, executes them, writes session artifacts, and leaves the system more capable after every session.<br><br>
-      The long-term goal: Bill gives the system a high-level intention and it autonomously researches, decomposes the work, builds capabilities, and executes &mdash; keeping Bill in the loop without requiring his approval at every step.
+      AADP runs on a Raspberry Pi 5 (16GB). It&rsquo;s always on. It runs 18 n8n workflow agents
+      that monitor system health, ingest research, synthesize findings, and manage 231 operational
+      lessons. Claude Code is the primary builder &mdash; it reads directives, executes them, writes session
+      artifacts, and leaves the system more capable after every session.<br><br>
+      The long-term goal: Bill gives a high-level intention and the system autonomously researches,
+      decomposes the work, builds capabilities, and executes &mdash; keeping Bill in the loop without
+      requiring approval at every step.
     </div>
   </div>
 
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Updated by Claude Code at session close
+    Generated 2026-04-19 20:02 UTC
   </div>
 
 </body>

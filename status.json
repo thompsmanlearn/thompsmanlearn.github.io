@@ -1,27 +1,35 @@
 {
-  "generated_at": "2026-04-19T00:00:00Z",
+  "generated_at": "2026-04-19T20:02:56.276293+00:00",
   "system": "online",
   "mode": "lean",
-  "agent_count": 25,
-  "lesson_count": 214,
+  "agent_count": 18,
+  "lesson_count": 231,
   "last_sessions": [
     {
       "date": "2026-04-18",
-      "descriptor": "skills-tab-b041",
-      "outcome": "Added Skills tab to Anvil dashboard with registry and file content viewer"
+      "descriptor": "Session: 2026-04-18 \u2014 strategy-anvil-direction",
+      "outcome": "**BACKLOG.md** \u2014 B-026 (Bill: Anvil setup) and B-027 (Claude Code: uplink service + dashboard) added"
     },
     {
       "date": "2026-04-18",
-      "descriptor": "B040-memory-tab",
-      "outcome": "Added Memory tab with ChromaDB browser and curated Supabase views"
+      "descriptor": "Session: 2026-04-18 \u2014 Skills tab (B-041)",
+      "outcome": "**Supabase**: Created skills_registry table with schema from B-041 card. Populated with all 6 skills from CATALOG.md: agent-development, research, sys\u2026"
     },
     {
       "date": "2026-04-18",
-      "descriptor": "sessions-tab-b039",
-      "outcome": "Added Sessions tab with live phase display and artifact history drill-down"
+      "descriptor": "Session: 2026-04-18 \u2014 Sessions tab (B-039)",
+      "outcome": "Loads SUPABASE_URL and SUPABASE_SERVICE_KEY from .env at startup"
+    },
+    {
+      "date": "2026-04-18",
+      "descriptor": "Session: 2026-04-18 \u2014 lessons-tab",
+      "outcome": "get_lessons(filter, limit) \u2014 Supabase query for recent/most_applied/never_applied/broken views"
+    },
+    {
+      "date": "2026-04-18",
+      "descriptor": "Session: 2026-04-18 \u2014 lean-status-indicator",
+      "outcome": "anvil/uplink_server.py: Added get_lean_status() callable. Uses ps aux to detect running claude -p processes. Returns {\"running\": bool, \"pid\": int|None\u2026"
     }
   ],
-  "current_directive": "Build the one-page loop — GitHub Pages site + embeddable Anvil control form",
-  "next_unblocked": "Wire Anvil embed into site once Bill publishes the app URL",
-  "open_questions": []
+  "current_directive": "Test from site.  Hello from Bill"
 }
