@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T17:55:23.811423+00:00",
+  "generated_at": "2026-04-22T18:04:16.125506+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 18,
@@ -17,6 +17,11 @@
     },
     {
       "date": "2026-04-22",
+      "descriptor": "Session: 2026-04-22 \u2014 B-046 Anvil uplink watchdog",
+      "outcome": "~/aadp/sentinel/anvil_watchdog.sh \u2014 check script; captures HTTP status code and body; logs both on failure; restarts aadp-anvil.service on non-200; ex\u2026"
+    },
+    {
+      "date": "2026-04-22",
       "descriptor": "Session: 2026-04-22 \u2014 B-044 Diagnostic Collaboration",
       "outcome": "claudis/sessions/lean/B-044-diagnostic-collab.md \u2014 initial 7-section diagnostic brief written"
     },
@@ -24,12 +29,7 @@
       "date": "2026-04-19",
       "descriptor": "Session: 2026-04-19 \u2014 site-loop-test",
       "outcome": ""
-    },
-    {
-      "date": "2026-04-19",
-      "descriptor": "Session: 2026-04-19 \u2014 One-page loop + project graph",
-      "outcome": "**thompsmanlearn.github.io** \u2014 repo created, GitHub Pages live. index.html (dynamic, generated from live data) and status.json (machine-readable state\u2026"
     }
   ],
-  "current_directive": "Run: B-045"
+  "current_directive": "Run: B-046"
 }
