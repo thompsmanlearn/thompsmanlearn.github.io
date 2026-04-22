@@ -1,10 +1,20 @@
 {
-  "generated_at": "2026-04-20T00:30:52.733700+00:00",
+  "generated_at": "2026-04-22T17:41:41.898389+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 18,
-  "lesson_count": 231,
+  "lesson_count": 233,
   "last_sessions": [
+    {
+      "date": "B-044-diag",
+      "descriptor": "B-044: Diagnostic Collaboration \u2014 Silent-Failure Surface",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-22",
+      "descriptor": "Session: 2026-04-22 \u2014 B-044 Diagnostic Collaboration",
+      "outcome": "claudis/sessions/lean/B-044-diagnostic-collab.md \u2014 initial 7-section diagnostic brief written"
+    },
     {
       "date": "2026-04-19",
       "descriptor": "Session: 2026-04-19 \u2014 site-loop-test",
@@ -19,17 +29,7 @@
       "date": "2026-04-19",
       "descriptor": "Session: 2026-04-19 \u2014 B-043: Auto-cycle between sessions",
       "outcome": "**lean_runner.sh** (~/aadp/sentinel/lean_runner.sh + ~/aadp/claudis/sentinel/lean_runner.sh) \u2014 Added AUTO-CYCLE block (~90 lines) at end of success br\u2026"
-    },
-    {
-      "date": "2026-04-19",
-      "descriptor": "Session: 2026-04-19 \u2014 B-042: Autonomous project node cycling",
-      "outcome": "**generate_site.py** \u2014 expanded from single-page generator to multi-page site generator. Now produces 6 HTML files: index.html, fleet.html, capabiliti\u2026"
-    },
-    {
-      "date": "2026-04-18",
-      "descriptor": "Session: 2026-04-18 \u2014 strategy-anvil-direction",
-      "outcome": "**BACKLOG.md** \u2014 B-026 (Bill: Anvil setup) and B-027 (Claude Code: uplink service + dashboard) added"
     }
   ],
-  "current_directive": "Run: B-043"
+  "current_directive": "Run: B-044"
 }
