@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-22T18:04:16.125506+00:00",
+  "generated_at": "2026-04-22T21:05:05.986361+00:00",
   "system": "online",
   "mode": "lean",
-  "agent_count": 18,
+  "agent_count": 10,
   "lesson_count": 233,
   "last_sessions": [
     {
@@ -17,6 +17,11 @@
     },
     {
       "date": "2026-04-22",
+      "descriptor": "Gap Analysis: Claude Code Convention Defaults vs. What's Mis",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-22",
       "descriptor": "Session: 2026-04-22 \u2014 B-046 Anvil uplink watchdog",
       "outcome": "~/aadp/sentinel/anvil_watchdog.sh \u2014 check script; captures HTTP status code and body; logs both on failure; restarts aadp-anvil.service on non-200; ex\u2026"
     },
@@ -24,11 +29,6 @@
       "date": "2026-04-22",
       "descriptor": "Session: 2026-04-22 \u2014 B-044 Diagnostic Collaboration",
       "outcome": "claudis/sessions/lean/B-044-diagnostic-collab.md \u2014 initial 7-section diagnostic brief written"
-    },
-    {
-      "date": "2026-04-19",
-      "descriptor": "Session: 2026-04-19 \u2014 site-loop-test",
-      "outcome": ""
     }
   ],
   "current_directive": "Run: B-046"

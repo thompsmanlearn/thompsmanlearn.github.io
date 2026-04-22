@@ -78,27 +78,16 @@
 
   <h2>System at a Glance</h2>
   <div class="stat-row">
-    <div class="stat"><div class="stat-num" style="color:var(--green)">18</div><div class="stat-label">Active</div></div>
-    <div class="stat"><div class="stat-num" style="color:var(--yellow)">12</div><div class="stat-label">Paused</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--green)">10</div><div class="stat-label">Active</div></div>
+    <div class="stat"><div class="stat-num" style="color:var(--yellow)">20</div><div class="stat-label">Paused</div></div>
     <div class="stat"><div class="stat-num" style="color:var(--red)">2</div><div class="stat-label">Retired</div></div>
     <div class="stat"><div class="stat-num">32</div><div class="stat-label">Total</div></div>
   </div>
 
-  <h2>Active &mdash; 18 agents</h2>
+  <h2>Active &mdash; 10 agents</h2>
   <div class="card">
     <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">4-Pillars Agent Evaluator</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
-        <span class="badge badge-green">active</span>
-        <span class="badge" style="border-color:#bb86fc;color:#bb86fc">critic</span>
-      </div>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Evaluates AADP sandbox agents on 4 quality pillars: behavior_consistency, output_quality, reliability, integration_fit. Fetches agent metadata from agent_registry and recent experimental_outputs, call…</div>
-    <div style="font-size:.75rem;color:var(--muted);margin-top:6px;">⏱ on_demand</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Agent Health Monitor</div>
+      <div class="card-title">Agent Health Monitor 🔒</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
         <span class="badge badge-green">active</span>
         <span class="badge" style="border-color:#bb86fc;color:#bb86fc">critic</span>
@@ -120,7 +109,7 @@
   </div>
   <div class="card">
     <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">ArXiv → AADP Design Pipeline</div>
+      <div class="card-title">ArXiv → AADP Design Pipeline 🔒</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
         <span class="badge badge-green">active</span>
         <span class="badge" style="border-color:#ff9800;color:#ff9800">scout</span>
@@ -131,7 +120,7 @@
   </div>
   <div class="card">
     <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Autonomous Growth Scheduler</div>
+      <div class="card-title">Autonomous Growth Scheduler 🔒</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
         <span class="badge badge-green">active</span>
         <span class="badge" style="border-color:#4a9eff;color:#4a9eff">developer</span>
@@ -139,17 +128,6 @@
     </div>
     <div class="card-body" style="margin-top:6px;">Fires every 6 hours. If work_queue is empty, inserts a free-mode task rotating through: explore → agent_build → research_cycle. Ensures Sentinel always has autonomous work regardless of Bill's queue. …</div>
     <div style="font-size:.75rem;color:var(--muted);margin-top:6px;">⏱ 0 */6 * * *</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Behavioral Health Check</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
-        <span class="badge badge-green">active</span>
-        <span class="badge" style="border-color:#bb86fc;color:#bb86fc">critic</span>
-      </div>
-    </div>
-    <div class="card-body" style="margin-top:6px;">SpecOps-inspired behavioral health checker. Accepts POST {agent_name}, fetches last 10 n8n executions, computes success_rate/avg_duration/error_streak/consistency_score, calls Haiku for a reliability …</div>
-    <div style="font-size:.75rem;color:var(--muted);margin-top:6px;">⏱ on_demand</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
@@ -164,29 +142,7 @@
   </div>
   <div class="card">
     <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Feedback Agent — Telegram Replies</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
-        <span class="badge badge-green">active</span>
-        <span class="badge" style="border-color:#888;color:#888">router</span>
-      </div>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Receives Telegram reply feedback (reactions and refinements), parses intent, writes to feedback_log and refinements tables, confirms via Telegram. Webhook: POST /webhook/feedback-agent with {chat_id, …</div>
-    <div style="font-size:.75rem;color:var(--muted);margin-top:6px;">⏱ on_demand</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">GitHub Issue Age Tracker</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
-        <span class="badge badge-green">active</span>
-        <span class="badge" style="border-color:#ff9800;color:#ff9800">scout</span>
-      </div>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Scans thompsmanlearn/claudis repo for open GitHub issues unactioned for &gt;3 days. Fetches via GitHub API, filters by updated_at age, sends Telegram alert with stale issue list, writes scan to experimen…</div>
-    <div style="font-size:.75rem;color:var(--muted);margin-top:6px;">⏱ on_demand</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Lesson Injector — Auto-RAG Context Enrichment</div>
+      <div class="card-title">Lesson Injector — Auto-RAG Context Enrichment 🔒</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
         <span class="badge badge-green">active</span>
         <span class="badge" style="border-color:#4a9eff;color:#4a9eff">developer</span>
@@ -197,7 +153,7 @@
   </div>
   <div class="card">
     <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Daily Morning Briefing</div>
+      <div class="card-title">Daily Morning Briefing 🔒</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
         <span class="badge badge-green">active</span>
         <span class="badge" style="border-color:#4caf50;color:#4caf50">publisher</span>
@@ -208,18 +164,7 @@
   </div>
   <div class="card">
     <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Processed Content Agent</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
-        <span class="badge badge-green">active</span>
-        <span class="badge" style="border-color:#aaa;color:#aaa">reader</span>
-      </div>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Monitors processed/ in claudis GitHub repo for new markdown files, parses them, and writes to resources table with status=processed. Sends Telegram notification if New Questions section found.</div>
-    <div style="font-size:.75rem;color:var(--muted);margin-top:6px;">⏱ every 6 hours</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Research Synthesis Agent</div>
+      <div class="card-title">Research Synthesis Agent 🔒</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
         <span class="badge badge-green">active</span>
         <span class="badge" style="border-color:#26c6da;color:#26c6da">analyst</span>
@@ -230,18 +175,7 @@
   </div>
   <div class="card">
     <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Resource Scout — Reddit</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
-        <span class="badge badge-green">active</span>
-        <span class="badge" style="border-color:#ff9800;color:#ff9800">scout</span>
-      </div>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Scans r/blender, r/unrealengine, and r/gamedev for new posts, deduplicates against existing resources, scores relevance against active inquiry threads via Haiku (stats server), and writes qualifying i…</div>
-    <div style="font-size:.75rem;color:var(--muted);margin-top:6px;">⏱ 0 6,18 * * *</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Session Health Reporter</div>
+      <div class="card-title">Session Health Reporter 🔒</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
         <span class="badge badge-green">active</span>
         <span class="badge" style="border-color:#4a9eff;color:#4a9eff">developer</span>
@@ -261,43 +195,29 @@
     <div class="card-body" style="margin-top:6px;">Watches Telegram for messages from Bill. Parses /agent and make agent commands, assigns priority, writes to work_queue with task_type=agent_request, replies with acknowledgment.</div>
     <div style="font-size:.75rem;color:var(--muted);margin-top:6px;">⏱ on_demand</div>
   </div>
-  <div class="card">
-    <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Usage Stats — Claudis Activity Report</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
-        <span class="badge badge-green">active</span>
-        <span class="badge" style="border-color:#aaa;color:#aaa">reader</span>
-      </div>
-    </div>
-    <div class="card-body" style="margin-top:6px;">On-demand Telegram report: Claudis current state (task, heartbeat age), active agent count, weekly token reset reminder. Triggered by /usage TCA command. Workflow: NeVI0bEB6WsJEf6I. Built 2026-03-29.</div>
-    <div style="font-size:.75rem;color:var(--muted);margin-top:6px;">⏱ on_demand</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:flex-start;gap:8px;justify-content:space-between;flex-wrap:wrap;">
-      <div class="card-title">Weather Agent — Watsonville CA</div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px;">
-        <span class="badge badge-green">active</span>
-        <span class="badge" style="border-color:#4caf50;color:#4caf50">publisher</span>
-      </div>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Returns current weather and 3-day forecast for the configured location using Open-Meteo free API. Triggered via GET /webhook/weather. Responds with formatted Telegram-ready message. Activated by /weat…</div>
-    <div style="font-size:.75rem;color:var(--muted);margin-top:6px;">⏱ on_demand</div>
-  </div>
 
-  <h2>Paused &mdash; 12 agents</h2>
+  <h2>Paused &mdash; 20 agents</h2>
   <div class="card" style="padding:0 16px;">
     <div style="padding:8px 0;font-size:.75rem;color:var(--muted);">Not currently scheduled. Reactivate via Telegram or Anvil dashboard.</div>
+  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">4-Pillars Agent Evaluator</span><span style="font-size:.7rem;color:#bb86fc;">critic</span></div>
   <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">AI Frontier Scout</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
+  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Behavioral Health Check</span><span style="font-size:.7rem;color:#bb86fc;">critic</span></div>
   <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Monterey Bay Coast Intelligence</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
   <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Cosmos Report</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
-  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Daily Briefing Agent 🔒</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
+  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Daily Briefing Agent</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
   <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Daily Research Scout</span><span style="font-size:.7rem;color:#aaa;">reader</span></div>
+  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Feedback Agent — Telegram Replies</span><span style="font-size:.7rem;color:#888;">router</span></div>
+  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">GitHub Issue Age Tracker</span><span style="font-size:.7rem;color:#ff9800;">scout</span></div>
   <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Greeter Bot</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
   <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Heritage Watch</span><span style="font-size:.7rem;color:#aaa;">reader</span></div>
   <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Macro Economic Pulse</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
-  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Research Agent — Doc Fetcher 🔒</span><span style="font-size:.7rem;color:#aaa;">reader</span></div>
+  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Processed Content Agent</span><span style="font-size:.7rem;color:#aaa;">reader</span></div>
+  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Research Agent — Doc Fetcher</span><span style="font-size:.7rem;color:#aaa;">reader</span></div>
+  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Resource Scout — Reddit</span><span style="font-size:.7rem;color:#ff9800;">scout</span></div>
   <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Serendipity Engine</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
   <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Session Report Agent</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
+  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Usage Stats — Claudis Activity Report</span><span style="font-size:.7rem;color:#aaa;">reader</span></div>
+  <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Weather Agent — Watsonville CA</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
   <div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;"><span style="flex:1;font-size:.85rem;">Wikipedia Attention Monitor</span><span style="font-size:.7rem;color:#4caf50;">publisher</span></div>
   </div>
 
@@ -309,7 +229,7 @@
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-04-22 18:04 UTC
+    Generated 2026-04-22 21:05 UTC
   </div>
 </body>
 </html>
