@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23T00:58:21.228318+00:00",
+  "generated_at": "2026-04-23T01:23:58.014245+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
@@ -17,18 +17,18 @@
     },
     {
       "date": "2026-04-22",
+      "descriptor": "Session: 2026-04-22 \u2014 session close prep (CATALOG + site sta",
+      "outcome": "~/aadp/claudis/skills/CATALOG.md (97e8369): anvil row \"Provides\" updated to reference PROJECT_STATE.md \u2014 future Anvil sessions will know to load it."
+    },
+    {
+      "date": "2026-04-22",
       "descriptor": "Gap Analysis: Claude Code Convention Defaults vs. What's Mis",
       "outcome": ""
     },
     {
       "date": "2026-04-22",
-      "descriptor": "Session: 2026-04-22 \u2014 Boot Chain Observations",
-      "outcome": ""
-    },
-    {
-      "date": "2026-04-22",
-      "descriptor": "Session: 2026-04-22 \u2014 B-047 close-session Step 3 update",
-      "outcome": "~/aadp/mcp-server/.claude/skills/close-session.md Step 3 replaced."
+      "descriptor": "Session: 2026-04-22 \u2014 error_logs column fix (created_at \u2192 ti",
+      "outcome": "~/aadp/claudis/anvil/uplink_server.py (c7302d6):"
     }
   ],
   "current_directive": "Run: B-047"

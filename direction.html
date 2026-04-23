@@ -95,6 +95,20 @@
   <div class="card">
     <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
       <span class="badge" style="font-size:.7rem;">2026-04-22</span>
+      <span style="font-size:.8rem;color:var(--muted);">Session: 2026-04-22 — session close prep (CATALOG + site sta</span>
+    </div>
+    <div class="card-body" style="margin-top:6px;">Pre-close housekeeping: link PROJECT_STATE.md into boot chain; wire site status + regenerate gap (#3 from PROJECT_STATE.md).</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
+      <span class="badge" style="font-size:.7rem;">2026-04-22</span>
+      <span style="font-size:.8rem;color:var(--muted);">Session: 2026-04-22 — error_logs column fix (created_at → ti</span>
+    </div>
+    <div class="card-body" style="margin-top:6px;">Three bug fixes from PROJECT_STATE.md decomposition — error_logs column naming.</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
+      <span class="badge" style="font-size:.7rem;">2026-04-22</span>
       <span style="font-size:.8rem;color:var(--muted);">Session: 2026-04-22 — B-047 close-session Step 3 update</span>
     </div>
     <div class="card-body" style="margin-top:6px;">B-047: Update close-session skill Step 3 to match new TRAJECTORY.md structure — rewrite current state rather than append update logs.</div>
@@ -189,20 +203,6 @@
       <span style="font-size:.8rem;color:var(--muted);">Session: 2026-04-18 — B-038: agent_artifacts table and initi</span>
     </div>
     <div class="card-body" style="margin-top:6px;">B-038: Create the `agent_artifacts` table in Supabase and update 2-3 agents to write artifacts as the final step of their workflow. Prove the cross-agent artifact convention with real data flowing.</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
-      <span class="badge" style="font-size:.7rem;">2026-04-18</span>
-      <span style="font-size:.8rem;color:var(--muted);">Session: 2026-04-18 — B-037: Agent Input/Output Declarations</span>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Populate `input_types` and `output_types` fields in `agent_registry` for all active and paused agents, using actual workflow logic as source of truth.</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
-      <span class="badge" style="font-size:.7rem;">2026-04-18</span>
-      <span style="font-size:.8rem;color:var(--muted);">Session: 2026-04-18 — B-035: Add agent feedback summary to m</span>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Add a &quot;Recent Feedback&quot; section to the morning briefing (workflow xt8Prqvi7iJlhrVG) that reads from the agent_feedback table and surfaces thumbs-down ratings and comments from the last 24 hours.</div>
   </div>
 
   <h2>Notable Queue Items</h2>
@@ -326,7 +326,7 @@
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-04-23 00:58 UTC
+    Generated 2026-04-23 01:23 UTC
   </div>
 </body>
 </html>
