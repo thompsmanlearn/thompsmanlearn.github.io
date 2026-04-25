@@ -1,13 +1,23 @@
 {
-  "generated_at": "2026-04-23T01:23:58.014245+00:00",
+  "generated_at": "2026-04-25T20:29:44.849201+00:00",
   "system": "online",
   "mode": "lean",
-  "agent_count": 10,
-  "lesson_count": 233,
+  "agent_count": 9,
+  "lesson_count": 237,
   "last_sessions": [
     {
       "date": "B-044-diag",
       "descriptor": "B-044: Diagnostic Collaboration \u2014 Silent-Failure Surface",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-25",
+      "descriptor": "Session: B-048 \u2014 Consolidate developer_context_load into LEA",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-25",
+      "descriptor": "Session: 2026-04-25 \u2014 Anvil UI Gap Closure + ChromaDB Loop",
       "outcome": ""
     },
     {
@@ -19,17 +29,7 @@
       "date": "2026-04-22",
       "descriptor": "Session: 2026-04-22 \u2014 session close prep (CATALOG + site sta",
       "outcome": "~/aadp/claudis/skills/CATALOG.md (97e8369): anvil row \"Provides\" updated to reference PROJECT_STATE.md \u2014 future Anvil sessions will know to load it."
-    },
-    {
-      "date": "2026-04-22",
-      "descriptor": "Gap Analysis: Claude Code Convention Defaults vs. What's Mis",
-      "outcome": ""
-    },
-    {
-      "date": "2026-04-22",
-      "descriptor": "Session: 2026-04-22 \u2014 error_logs column fix (created_at \u2192 ti",
-      "outcome": "~/aadp/claudis/anvil/uplink_server.py (c7302d6):"
     }
   ],
-  "current_directive": "Run: B-047"
+  "current_directive": "Run: B-050"
 }
