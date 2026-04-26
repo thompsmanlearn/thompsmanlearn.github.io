@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T21:49:16.320430+00:00",
+  "generated_at": "2026-04-26T22:11:05.970290+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
@@ -17,6 +17,11 @@
     },
     {
       "date": "2026-04-26",
+      "descriptor": "B-060: Anvil Feedback Thread Visibility",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-26",
       "descriptor": "Session: 2026-04-26-1114 \u2014 B-058 Boot-time Feedback Pickup",
       "outcome": ""
     },
@@ -24,12 +29,7 @@
       "date": "2026-04-26",
       "descriptor": "B-057: Research Bundle Export",
       "outcome": ""
-    },
-    {
-      "date": "2026-04-26",
-      "descriptor": "2026-04-26 B-056: Research Tab + Run Button Fixes",
-      "outcome": "**Research tab in Anvil** (claude-dashboard cdce549): New tab between Memory and Skills. Article cards show title (Link), source, query tag, summary, \u2026"
     }
   ],
-  "current_directive": "Run: B-060"
+  "current_directive": "Run: B-061"
 }
