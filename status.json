@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-26T22:11:05.970290+00:00",
+  "generated_at": "2026-04-26T22:28:30.305649+00:00",
   "system": "online",
   "mode": "lean",
-  "agent_count": 10,
-  "lesson_count": 248,
+  "agent_count": 0,
+  "lesson_count": 0,
   "last_sessions": [
     {
       "date": "B-044-diag",
@@ -17,17 +17,17 @@
     },
     {
       "date": "2026-04-26",
+      "descriptor": "B-061a: Bring close-session.md and bootstrap.md into Claudis",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-26",
+      "descriptor": "B-061: Generalize Export Across All Dashboard Tabs",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-26",
       "descriptor": "B-060: Anvil Feedback Thread Visibility",
-      "outcome": ""
-    },
-    {
-      "date": "2026-04-26",
-      "descriptor": "Session: 2026-04-26-1114 \u2014 B-058 Boot-time Feedback Pickup",
-      "outcome": ""
-    },
-    {
-      "date": "2026-04-26",
-      "descriptor": "B-057: Research Bundle Export",
       "outcome": ""
     }
   ],
