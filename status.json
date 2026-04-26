@@ -1,13 +1,18 @@
 {
-  "generated_at": "2026-04-25T20:29:44.849201+00:00",
+  "generated_at": "2026-04-26T05:06:39.071481+00:00",
   "system": "online",
   "mode": "lean",
-  "agent_count": 9,
-  "lesson_count": 237,
+  "agent_count": 10,
+  "lesson_count": 239,
   "last_sessions": [
     {
       "date": "B-044-diag",
       "descriptor": "B-044: Diagnostic Collaboration \u2014 Silent-Failure Surface",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-25",
+      "descriptor": "Session Artifact \u2014 B-052: Boot Retrieval Quality Audit",
       "outcome": ""
     },
     {
@@ -24,12 +29,7 @@
       "date": "2026-04-23",
       "descriptor": "Session: 2026-04-22 \u2014 B-045: /ping websocket fix + \u00a713 probe",
       "outcome": "**~/aadp/claudis/anvil/uplink_server.py** \u2014 _HealthHandler.do_GET now checks anvil.server._connection is not None and conn.is_ready() in addition to t\u2026"
-    },
-    {
-      "date": "2026-04-22",
-      "descriptor": "Session: 2026-04-22 \u2014 session close prep (CATALOG + site sta",
-      "outcome": "~/aadp/claudis/skills/CATALOG.md (97e8369): anvil row \"Provides\" updated to reference PROJECT_STATE.md \u2014 future Anvil sessions will know to load it."
     }
   ],
-  "current_directive": "Run: B-050"
+  "current_directive": "Run: B-055"
 }
