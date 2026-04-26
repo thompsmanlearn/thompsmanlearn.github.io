@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T20:24:56.838928+00:00",
+  "generated_at": "2026-04-26T21:49:16.320430+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
@@ -31,5 +31,5 @@
       "outcome": "**Research tab in Anvil** (claude-dashboard cdce549): New tab between Memory and Skills. Article cards show title (Link), source, query tag, summary, \u2026"
     }
   ],
-  "current_directive": ""
+  "current_directive": "Run: B-060"
 }
