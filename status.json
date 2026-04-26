@@ -1,14 +1,19 @@
 {
-  "generated_at": "2026-04-26T15:19:25.481506+00:00",
+  "generated_at": "2026-04-26T16:59:37.199320+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
-  "lesson_count": 241,
+  "lesson_count": 243,
   "last_sessions": [
     {
       "date": "B-044-diag",
       "descriptor": "B-044: Diagnostic Collaboration \u2014 Silent-Failure Surface",
       "outcome": ""
+    },
+    {
+      "date": "2026-04-26",
+      "descriptor": "2026-04-26 B-056: Research Tab + Run Button Fixes",
+      "outcome": "**Research tab in Anvil** (claude-dashboard cdce549): New tab between Memory and Skills. Article cards show title (Link), source, query tag, summary, \u2026"
     },
     {
       "date": "2026-04-26",
@@ -24,12 +29,7 @@
       "date": "2026-04-25",
       "descriptor": "Session: B-048 \u2014 Consolidate developer_context_load into LEA",
       "outcome": ""
-    },
-    {
-      "date": "2026-04-25",
-      "descriptor": "Session: 2026-04-25 \u2014 Anvil UI Gap Closure + ChromaDB Loop",
-      "outcome": ""
     }
   ],
-  "current_directive": "Run: B-056"
+  "current_directive": "Run: B-057"
 }
