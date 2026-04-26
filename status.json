@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-26T16:59:37.199320+00:00",
+  "generated_at": "2026-04-26T20:24:56.838928+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
-  "lesson_count": 243,
+  "lesson_count": 248,
   "last_sessions": [
     {
       "date": "B-044-diag",
@@ -12,24 +12,24 @@
     },
     {
       "date": "2026-04-26",
-      "descriptor": "2026-04-26 B-056: Research Tab + Run Button Fixes",
-      "outcome": "**Research tab in Anvil** (claude-dashboard cdce549): New tab between Memory and Skills. Article cards show title (Link), source, query tag, summary, \u2026"
+      "descriptor": "Bundle Review Follow-Up",
+      "outcome": ""
     },
     {
       "date": "2026-04-26",
-      "descriptor": "Session: 2026-04-26 \u2014 B-055 Context Engineering Research Age",
+      "descriptor": "Session: 2026-04-26-1114 \u2014 B-058 Boot-time Feedback Pickup",
       "outcome": ""
     },
     {
-      "date": "2026-04-25",
-      "descriptor": "Session Artifact \u2014 B-052: Boot Retrieval Quality Audit",
+      "date": "2026-04-26",
+      "descriptor": "B-057: Research Bundle Export",
       "outcome": ""
     },
     {
-      "date": "2026-04-25",
-      "descriptor": "Session: B-048 \u2014 Consolidate developer_context_load into LEA",
-      "outcome": ""
+      "date": "2026-04-26",
+      "descriptor": "2026-04-26 B-056: Research Tab + Run Button Fixes",
+      "outcome": "**Research tab in Anvil** (claude-dashboard cdce549): New tab between Memory and Skills. Article cards show title (Link), source, query tag, summary, \u2026"
     }
   ],
-  "current_directive": "Run: B-057"
+  "current_directive": ""
 }
