@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-26T22:28:30.305649+00:00",
+  "generated_at": "2026-04-27T01:16:15.595938+00:00",
   "system": "online",
   "mode": "lean",
-  "agent_count": 0,
-  "lesson_count": 0,
+  "agent_count": 10,
+  "lesson_count": 249,
   "last_sessions": [
     {
       "date": "B-044-diag",
@@ -31,5 +31,5 @@
       "outcome": ""
     }
   ],
-  "current_directive": "Run: B-061"
+  "current_directive": "Run: B-062"
 }
