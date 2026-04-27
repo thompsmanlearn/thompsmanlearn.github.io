@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-27T01:16:15.595938+00:00",
+  "generated_at": "2026-04-27T09:00:05.187613+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
-  "lesson_count": 249,
+  "lesson_count": 250,
   "last_sessions": [
     {
       "date": "B-044-diag",
@@ -17,6 +17,11 @@
     },
     {
       "date": "2026-04-26",
+      "descriptor": "B-064: Lesson Binding Audit",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-26",
       "descriptor": "B-061a: Bring close-session.md and bootstrap.md into Claudis",
       "outcome": ""
     },
@@ -24,12 +29,7 @@
       "date": "2026-04-26",
       "descriptor": "B-061: Generalize Export Across All Dashboard Tabs",
       "outcome": ""
-    },
-    {
-      "date": "2026-04-26",
-      "descriptor": "B-060: Anvil Feedback Thread Visibility",
-      "outcome": ""
     }
   ],
-  "current_directive": "Run: B-062"
+  "current_directive": "Run: B-064"
 }
