@@ -1,13 +1,18 @@
 {
-  "generated_at": "2026-04-27T09:00:05.187613+00:00",
+  "generated_at": "2026-04-28T09:00:05.217624+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
-  "lesson_count": 250,
+  "lesson_count": 239,
   "last_sessions": [
     {
       "date": "B-044-diag",
       "descriptor": "B-044: Diagnostic Collaboration \u2014 Silent-Failure Surface",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-27",
+      "descriptor": "Session: B-069 \u2014 Retroactive Situation Backfill",
       "outcome": ""
     },
     {
@@ -24,12 +29,7 @@
       "date": "2026-04-26",
       "descriptor": "B-061a: Bring close-session.md and bootstrap.md into Claudis",
       "outcome": ""
-    },
-    {
-      "date": "2026-04-26",
-      "descriptor": "B-061: Generalize Export Across All Dashboard Tabs",
-      "outcome": ""
     }
   ],
-  "current_directive": "Run: B-064"
+  "current_directive": "Run: B-069"
 }
