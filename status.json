@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-28T09:00:05.217624+00:00",
+  "generated_at": "2026-04-29T02:15:49.828884+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
-  "lesson_count": 239,
+  "lesson_count": 241,
   "last_sessions": [
     {
       "date": "B-044-diag",
@@ -11,25 +11,25 @@
       "outcome": ""
     },
     {
+      "date": "2026-04-29",
+      "descriptor": "B-071: Thread Architecture \u2014 Write Callables",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-29",
+      "descriptor": "Session: B-074 Option A \u2014 close-session pull-before-push",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-29",
+      "descriptor": "Session: B-070 \u2014 Thread Architecture Substrate",
+      "outcome": ""
+    },
+    {
       "date": "2026-04-27",
       "descriptor": "Session: B-069 \u2014 Retroactive Situation Backfill",
       "outcome": ""
-    },
-    {
-      "date": "2026-04-26",
-      "descriptor": "Bundle Review Follow-Up",
-      "outcome": ""
-    },
-    {
-      "date": "2026-04-26",
-      "descriptor": "B-064: Lesson Binding Audit",
-      "outcome": ""
-    },
-    {
-      "date": "2026-04-26",
-      "descriptor": "B-061a: Bring close-session.md and bootstrap.md into Claudis",
-      "outcome": ""
     }
   ],
-  "current_directive": "Run: B-069"
+  "current_directive": "Run: B-071"
 }
