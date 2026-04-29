@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-29T03:51:23.360550+00:00",
+  "generated_at": "2026-04-29T09:00:05.219668+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
-  "lesson_count": 241,
+  "lesson_count": 243,
   "last_sessions": [
     {
       "date": "B-044-diag",
@@ -17,6 +17,11 @@
     },
     {
       "date": "2026-04-29",
+      "descriptor": "Session Artifact \u2014 2026-04-29-0345",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-29",
       "descriptor": "Session: B-074 Option A \u2014 close-session pull-before-push",
       "outcome": ""
     },
@@ -24,12 +29,7 @@
       "date": "2026-04-29",
       "descriptor": "Session: B-070 \u2014 Thread Architecture Substrate",
       "outcome": ""
-    },
-    {
-      "date": "2026-04-27",
-      "descriptor": "Session: B-069 \u2014 Retroactive Situation Backfill",
-      "outcome": ""
     }
   ],
-  "current_directive": "Run: B-072"
+  "current_directive": "Run: B-073"
 }
