@@ -1,13 +1,18 @@
 {
-  "generated_at": "2026-04-29T09:00:05.219668+00:00",
+  "generated_at": "2026-04-30T09:00:05.275676+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
-  "lesson_count": 243,
+  "lesson_count": 244,
   "last_sessions": [
     {
       "date": "B-044-diag",
       "descriptor": "B-044: Diagnostic Collaboration \u2014 Silent-Failure Surface",
+      "outcome": ""
+    },
+    {
+      "date": "2026-04-29",
+      "descriptor": "Session: B-073 \u2014 Anvil Threads Tab Actions",
       "outcome": ""
     },
     {
@@ -23,11 +28,6 @@
     {
       "date": "2026-04-29",
       "descriptor": "Session: B-074 Option A \u2014 close-session pull-before-push",
-      "outcome": ""
-    },
-    {
-      "date": "2026-04-29",
-      "descriptor": "Session: B-070 \u2014 Thread Architecture Substrate",
       "outcome": ""
     }
   ],
