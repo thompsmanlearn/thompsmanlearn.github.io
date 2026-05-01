@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-30T09:00:05.275676+00:00",
+  "generated_at": "2026-05-01T03:25:58.463585+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
@@ -31,5 +31,5 @@
       "outcome": ""
     }
   ],
-  "current_directive": "Run: B-073"
+  "current_directive": "Run: B-075"
 }
