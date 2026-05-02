@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T09:00:05.248566+00:00",
+  "generated_at": "2026-05-02T21:38:44.635023+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
@@ -11,25 +11,25 @@
       "outcome": ""
     },
     {
+      "date": "2026-05-02",
+      "descriptor": "Session: B-076 \u2014 Thread Detail View Redesign",
+      "outcome": ""
+    },
+    {
+      "date": "2026-05-02",
+      "descriptor": "Session: Pre-card cleanup pass on B-076 thread detail view",
+      "outcome": ""
+    },
+    {
+      "date": "2026-05-02",
+      "descriptor": "Session: B-077 \u2014 Collapse thread action panel to redesign sh",
+      "outcome": ""
+    },
+    {
       "date": "2026-05-01",
       "descriptor": "Session: 2026-05-01-0326",
       "outcome": ""
-    },
-    {
-      "date": "2026-04-29",
-      "descriptor": "Session: B-073 \u2014 Anvil Threads Tab Actions",
-      "outcome": ""
-    },
-    {
-      "date": "2026-04-29",
-      "descriptor": "B-071: Thread Architecture \u2014 Write Callables",
-      "outcome": ""
-    },
-    {
-      "date": "2026-04-29",
-      "descriptor": "Session Artifact \u2014 2026-04-29-0345",
-      "outcome": ""
     }
   ],
-  "current_directive": "Run: B-075"
+  "current_directive": "Run: B-078"
 }
