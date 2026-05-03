@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-02T21:38:44.635023+00:00",
+  "generated_at": "2026-05-03T09:00:09.724113+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
-  "lesson_count": 244,
+  "lesson_count": 246,
   "last_sessions": [
     {
       "date": "B-044-diag",
@@ -22,14 +22,14 @@
     },
     {
       "date": "2026-05-02",
-      "descriptor": "Session: B-077 \u2014 Collapse thread action panel to redesign sh",
-      "outcome": ""
+      "descriptor": "B-080: Wire thread-triggered gather output back into origina",
+      "outcome": "**DDL:** ALTER TABLE public.research_articles ADD COLUMN thread_id uuid (nullable, no FK)"
     },
     {
-      "date": "2026-05-01",
-      "descriptor": "Session: 2026-05-01-0326",
+      "date": "2026-05-02",
+      "descriptor": "Session: B-079 \u2014 Thread-aware query derivation for context_e",
       "outcome": ""
     }
   ],
-  "current_directive": "Run: B-078"
+  "current_directive": "Run: B-080"
 }
