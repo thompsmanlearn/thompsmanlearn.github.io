@@ -1,13 +1,18 @@
 {
-  "generated_at": "2026-05-03T18:11:36.577501+00:00",
+  "generated_at": "2026-05-03T19:23:24.853218+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
-  "lesson_count": 249,
+  "lesson_count": 250,
   "last_sessions": [
     {
       "date": "B-044-diag",
       "descriptor": "B-044: Diagnostic Collaboration \u2014 Silent-Failure Surface",
+      "outcome": ""
+    },
+    {
+      "date": "2026-05-03",
+      "descriptor": "Session: 2026-05-03 \u2014 B-082: Add Company Engineering Blogs a",
       "outcome": ""
     },
     {
@@ -24,12 +29,7 @@
       "date": "2026-05-02",
       "descriptor": "Session: Pre-card cleanup pass on B-076 thread detail view",
       "outcome": ""
-    },
-    {
-      "date": "2026-05-02",
-      "descriptor": "B-080: Wire thread-triggered gather output back into origina",
-      "outcome": "**DDL:** ALTER TABLE public.research_articles ADD COLUMN thread_id uuid (nullable, no FK)"
     }
   ],
-  "current_directive": "Run: B-081"
+  "current_directive": "Run: B-082"
 }
