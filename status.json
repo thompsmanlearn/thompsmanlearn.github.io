@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-03T19:23:24.853218+00:00",
+  "generated_at": "2026-05-04T09:00:43.990658+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
@@ -12,6 +12,16 @@
     },
     {
       "date": "2026-05-03",
+      "descriptor": "Session Artifact \u2014 2026-05-03 \u2014 Pre-card cleanup pass",
+      "outcome": ""
+    },
+    {
+      "date": "2026-05-03",
+      "descriptor": "Session Artifact \u2014 2026-05-03 \u2014 B-083: Standing summary at t",
+      "outcome": ""
+    },
+    {
+      "date": "2026-05-03",
       "descriptor": "Session: 2026-05-03 \u2014 B-082: Add Company Engineering Blogs a",
       "outcome": ""
     },
@@ -19,17 +29,7 @@
       "date": "2026-05-03",
       "descriptor": "Session Artifact \u2014 B-081: Neutralize summarization in contex",
       "outcome": ""
-    },
-    {
-      "date": "2026-05-02",
-      "descriptor": "Session: B-076 \u2014 Thread Detail View Redesign",
-      "outcome": ""
-    },
-    {
-      "date": "2026-05-02",
-      "descriptor": "Session: Pre-card cleanup pass on B-076 thread detail view",
-      "outcome": ""
     }
   ],
-  "current_directive": "Run: B-082"
+  "current_directive": "Run: B-083"
 }

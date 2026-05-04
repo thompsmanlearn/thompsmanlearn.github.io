@@ -76,7 +76,7 @@
   <h2>Current Directive</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text">Run: B-082</div>
+    <div class="next-text">Run: B-083</div>
   </div>
 
   <h2>Direction History</h2>
@@ -85,13 +85,42 @@
       What Bill directed at each session. Most recent first.
     </div>
   </div>
-<div class="card"><div class="card-body">No history yet.</div></div>
+  <div class="card">
+    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
+      <span class="badge" style="font-size:.7rem;">2026-05-03</span>
+      <span style="font-size:.8rem;color:var(--muted);">Session Artifact — 2026-05-03 — Pre-card cleanup pass</span>
+    </div>
+    <div class="card-body" style="margin-top:6px;">Unnumbered pre-card cleanup: update reference docs to reflect B-076–B-083, verify 6 recent lessons in both stores, classify 19 unresolved errors.</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
+      <span class="badge" style="font-size:.7rem;">2026-05-03</span>
+      <span style="font-size:.8rem;color:var(--muted);">Session Artifact — 2026-05-03 — B-083: Standing summary at t</span>
+    </div>
+    <div class="card-body" style="margin-top:6px;">B-083: Surface most recent summary entry at top of thread page.</div>
+  </div>
 
   <h2>Notable Queue Items</h2>
   <div class="card" style="border-color:var(--border);">
     <div class="card-body" style="font-size:.85rem;color:var(--muted);">
       Recent non-explore work queue items showing bill-directed or diagnostic tasks.
     </div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
+      <span class="badge" style="font-size:.7rem;">agent_build</span>
+      <span style="font-size:.75rem;color:var(--yellow);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-03</span>
+    </div>
+    <div class="card-body">Architecture review action: Integrate context compression preprocessing in lesson_injector to compress tool documentation before ChromaDB injection</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
+      <span class="badge" style="font-size:.7rem;">agent_build</span>
+      <span style="font-size:.75rem;color:var(--yellow);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-03</span>
+    </div>
+    <div class="card-body">Architecture review action: Extend evaluator component with SpecOps-like GUI testing module for Raspberry Pi deployment validation</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
@@ -155,7 +184,7 @@
       <span style="font-size:.75rem;color:var(--green);">●</span>
       <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
     </div>
-    <div class="card-body">Fix session_notes consumed flag: session_notes_load currently marks notes consumed immediately. This is destructive — if the incoming session misses context, it is unrecoverable. Proposal: add a mode …</div>
+    <div class="card-body">Fix arch_review backward loop: when run_architecture_review queues an implement work_queue item, immediately set research_papers.already_addressed_since=today for that paper. 3-line fix in stats_serve…</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
@@ -163,15 +192,7 @@
       <span style="font-size:.75rem;color:var(--green);">●</span>
       <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
     </div>
-    <div class="card-body">Fix arch_review backward loop: when run_architecture_review queues an implement work_queue item, immediately set research_papers.already_addressed_since=today for that paper. 3-line fix in stats_serve…</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
-      <span class="badge" style="font-size:.7rem;">self_diagnostic</span>
-      <span style="font-size:.75rem;color:var(--green);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
-    </div>
-    <div class="card-body">Audit work_queue utilization: how many items queued vs completed vs stale? What task_types? Are queued items actually being picked up by Sentinel? Check for tasks queued but never started, tasks compl…</div>
+    <div class="card-body">Fix session_notes consumed flag: session_notes_load currently marks notes consumed immediately. This is destructive — if the incoming session misses context, it is unrecoverable. Proposal: add a mode …</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
@@ -187,7 +208,7 @@
       <span style="font-size:.75rem;color:var(--green);">●</span>
       <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
     </div>
-    <div class="card-body">Verify prompt caching threshold behavior for Sonnet 4.6: confirm the ~2048-token system block requirement in practice. Check inject_context output sizes, measure whether cache_control is triggering on…</div>
+    <div class="card-body">Audit session handoff mechanism end-to-end: does the hot handoff note actually reach the incoming session? Are session_notes consumed or re-read? Check whether the April 6 0934 session handoff note wa…</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
@@ -195,20 +216,12 @@
       <span style="font-size:.75rem;color:var(--green);">●</span>
       <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
     </div>
-    <div class="card-body">Audit session handoff mechanism end-to-end: does the hot handoff note actually reach the incoming session? Are session_notes consumed or re-read? Check whether the April 6 0934 session handoff note wa…</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
-      <span class="badge" style="font-size:.7rem;">agent_build</span>
-      <span style="font-size:.75rem;color:var(--green);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
-    </div>
-    <div class="card-body">Architecture review action: Integrate automated GUI testing component into evaluator to test agent tool interactions in actual n8n workflows and system environments</div>
+    <div class="card-body">Verify prompt caching threshold behavior for Sonnet 4.6: confirm the ~2048-token system block requirement in practice. Check inject_context output sizes, measure whether cache_control is triggering on…</div>
   </div>
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-05-03 19:23 UTC
+    Generated 2026-05-04 09:00 UTC
   </div>
 </body>
 </html>
