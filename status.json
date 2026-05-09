@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-05-08T09:00:43.997190+00:00",
+  "generated_at": "2026-05-09T03:10:11.736045+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 10,
   "lesson_count": 250,
   "last_sessions": [
     {
+      "date": "chapter1-c",
+      "descriptor": "Chapter 1 Cards \u2014 B-084 through B-093",
+      "outcome": ""
+    },
+    {
       "date": "B-044-diag",
       "descriptor": "B-044: Diagnostic Collaboration \u2014 Silent-Failure Surface",
       "outcome": ""
     },
     {
-      "date": "2026-05-03",
-      "descriptor": "Session Artifact \u2014 2026-05-03 \u2014 Pre-card cleanup pass",
-      "outcome": ""
+      "date": "2026-05-08",
+      "descriptor": "Session: 2026-05-08 \u2014 B-093: Chapter 1 wrap",
+      "outcome": "**DEEP_DIVE_BRIEF.md Section 3** (How We Operate): Updated boot sequence description to include /resolve_skills step; added Boot File Roles and Author\u2026"
     },
     {
-      "date": "2026-05-03",
-      "descriptor": "Session Artifact \u2014 2026-05-03 \u2014 B-083: Standing summary at t",
-      "outcome": ""
+      "date": "2026-05-08",
+      "descriptor": "Session: 2026-05-08 \u2014 B-092: Retire INQUIRIES.md",
+      "outcome": "**threads table**: New thread created \u2014 \"Game development with AI-assisted workflows\" (id: c956c26c-e555-4057-9183-7fd3693d3699), state=active."
     },
     {
-      "date": "2026-05-03",
-      "descriptor": "Session: 2026-05-03 \u2014 B-082: Add Company Engineering Blogs a",
-      "outcome": ""
-    },
-    {
-      "date": "2026-05-03",
-      "descriptor": "Session Artifact \u2014 B-081: Neutralize summarization in contex",
-      "outcome": ""
+      "date": "2026-05-08",
+      "descriptor": "Session: 2026-05-08 \u2014 B-091: Carry-document pattern",
+      "outcome": "**CARRY_QUESTIONS.md, CARRY_PROPOSALS.md, CARRY_HEALTH.md** (new): Template files at claudis repo root. Auto-generated on every session close."
     }
   ],
-  "current_directive": "Run: B-083"
+  "current_directive": "Run B-084"
 }
