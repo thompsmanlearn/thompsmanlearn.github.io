@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-09T06:01:47.226478+00:00",
+  "generated_at": "2026-05-09T06:49:20.029249+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 9,
@@ -27,9 +27,9 @@
     },
     {
       "date": "2026-05-08",
-      "descriptor": "Session: 2026-05-08 \u2014 B-105: Fix Done when extraction + empt",
-      "outcome": "**stats_server.py** (live + canonical):"
+      "descriptor": "Session: 2026-05-08 \u2014 B-112: Chapter 3 wrap \u2014 documentation ",
+      "outcome": ""
     }
   ],
-  "current_directive": "Run B-084"
+  "current_directive": "Read TRAJECTORY.md and CARRY_QUESTIONS.md. Tell me what you see and what you'd recommend doing next. Do not start any work without my confirmation."
 }
