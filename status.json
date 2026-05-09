@@ -1,10 +1,15 @@
 {
-  "generated_at": "2026-05-09T03:10:11.736045+00:00",
+  "generated_at": "2026-05-09T04:28:42.073893+00:00",
   "system": "online",
   "mode": "lean",
-  "agent_count": 10,
+  "agent_count": 9,
   "lesson_count": 250,
   "last_sessions": [
+    {
+      "date": "chapter2-c",
+      "descriptor": "Chapter 2 Cards \u2014 B-094 through B-101",
+      "outcome": ""
+    },
     {
       "date": "chapter1-c",
       "descriptor": "Chapter 1 Cards \u2014 B-084 through B-093",
@@ -17,18 +22,13 @@
     },
     {
       "date": "2026-05-08",
-      "descriptor": "Session: 2026-05-08 \u2014 B-093: Chapter 1 wrap",
-      "outcome": "**DEEP_DIVE_BRIEF.md Section 3** (How We Operate): Updated boot sequence description to include /resolve_skills step; added Boot File Roles and Author\u2026"
+      "descriptor": "Session: 2026-05-08 \u2014 B-101: Chapter 2 wrap",
+      "outcome": "**agent_registry**: context_engineering_research \u2192 status='deprecated'. agent_registry_status_check constraint extended to include 'deprecated'."
     },
     {
       "date": "2026-05-08",
-      "descriptor": "Session: 2026-05-08 \u2014 B-092: Retire INQUIRIES.md",
-      "outcome": "**threads table**: New thread created \u2014 \"Game development with AI-assisted workflows\" (id: c956c26c-e555-4057-9183-7fd3693d3699), state=active."
-    },
-    {
-      "date": "2026-05-08",
-      "descriptor": "Session: 2026-05-08 \u2014 B-091: Carry-document pattern",
-      "outcome": "**CARRY_QUESTIONS.md, CARRY_PROPOSALS.md, CARRY_HEALTH.md** (new): Template files at claudis repo root. Auto-generated on every session close."
+      "descriptor": "Session: 2026-05-08 \u2014 B-100: Sub-question spawning \u2014 recursi",
+      "outcome": "**DDL on threads**: Added parent_thread_id uuid FK referencing threads(id)."
     }
   ],
   "current_directive": "Run B-084"
