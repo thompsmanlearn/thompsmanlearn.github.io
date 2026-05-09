@@ -88,6 +88,20 @@
   <div class="card">
     <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
       <span class="badge" style="font-size:.7rem;">2026-05-08</span>
+      <span style="font-size:.8rem;color:var(--muted);">Session: 2026-05-08 — B-105: Fix Done when extraction + empt</span>
+    </div>
+    <div class="card-body" style="margin-top:6px;">Fix BACKLOG.md done_when parser for format variants, add guard against grading with empty rubric.</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
+      <span class="badge" style="font-size:.7rem;">2026-05-08</span>
+      <span style="font-size:.8rem;color:var(--muted);">Session: 2026-05-08 — B-104: Pass commit SHA explicitly to g</span>
+    </div>
+    <div class="card-body" style="margin-top:6px;">Fix the grader's systematic false-pause on historical cards caused by the HEAD~3 git diff window.</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
+      <span class="badge" style="font-size:.7rem;">2026-05-08</span>
       <span style="font-size:.8rem;color:var(--muted);">Session: 2026-05-08 — B-103: Semantic memory consultation</span>
     </div>
     <div class="card-body" style="margin-top:6px;">Upgrade /consult_memory from keyword ilike matching to semantic ChromaDB search for research_articles.</div>
@@ -182,27 +196,6 @@
       <span style="font-size:.8rem;color:var(--muted);">Session: 2026-05-08 — B-090: Boot-time skill resolution</span>
     </div>
     <div class="card-body" style="margin-top:6px;">Replace judgment-based skill matching in LEAN_BOOT step 6 with deterministic /resolve_skills endpoint.</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
-      <span class="badge" style="font-size:.7rem;">2026-05-08</span>
-      <span style="font-size:.8rem;color:var(--muted);">Session: 2026-05-08 — B-089: Capability index</span>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Unify CATALOG.md, agent_registry, and capabilities table into a coherent three-registry model.</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
-      <span class="badge" style="font-size:.7rem;">2026-05-08</span>
-      <span style="font-size:.8rem;color:var(--muted);">Session: 2026-05-08 — B-088: Authorization tiers</span>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Formalize authorization tiers replacing the binary autonomous/needs-approval model.</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
-      <span class="badge" style="font-size:.7rem;">2026-05-08</span>
-      <span style="font-size:.8rem;color:var(--muted);">Session: 2026-05-08 — B-087: Grader as first-class component</span>
-    </div>
-    <div class="card-body" style="margin-top:6px;">Build the grader: Sonnet evaluates completed cards against done-when criteria in a separate context from the builder.</div>
   </div>
 
   <h2>Notable Queue Items</h2>
@@ -326,7 +319,7 @@
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-05-09 05:15 UTC
+    Generated 2026-05-09 06:01 UTC
   </div>
 </body>
 </html>

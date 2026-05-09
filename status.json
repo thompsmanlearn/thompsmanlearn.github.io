@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-09T05:15:16.192347+00:00",
+  "generated_at": "2026-05-09T06:01:47.226478+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 9,
-  "lesson_count": 250,
+  "lesson_count": 255,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -22,13 +22,13 @@
     },
     {
       "date": "2026-05-08",
-      "descriptor": "Session: 2026-05-08 \u2014 B-103: Semantic memory consultation",
-      "outcome": "**DDL**: Added chromadb_id text column to research_articles."
+      "descriptor": "Session: 2026-05-08 \u2014 Chapters 1 + 2 complete (B-084\u2013B-105)",
+      "outcome": ""
     },
     {
       "date": "2026-05-08",
-      "descriptor": "Session: 2026-05-08 \u2014 B-102: Grader evaluation export",
-      "outcome": "**anvil/uplink_server.py**: Added export_grader_review(review_id) callable."
+      "descriptor": "Session: 2026-05-08 \u2014 B-105: Fix Done when extraction + empt",
+      "outcome": "**stats_server.py** (live + canonical):"
     }
   ],
   "current_directive": "Run B-084"
