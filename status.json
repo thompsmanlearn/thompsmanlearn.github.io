@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-09T04:28:42.073893+00:00",
+  "generated_at": "2026-05-09T05:15:16.192347+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 9,
@@ -22,13 +22,13 @@
     },
     {
       "date": "2026-05-08",
-      "descriptor": "Session: 2026-05-08 \u2014 B-101: Chapter 2 wrap",
-      "outcome": "**agent_registry**: context_engineering_research \u2192 status='deprecated'. agent_registry_status_check constraint extended to include 'deprecated'."
+      "descriptor": "Session: 2026-05-08 \u2014 B-103: Semantic memory consultation",
+      "outcome": "**DDL**: Added chromadb_id text column to research_articles."
     },
     {
       "date": "2026-05-08",
-      "descriptor": "Session: 2026-05-08 \u2014 B-100: Sub-question spawning \u2014 recursi",
-      "outcome": "**DDL on threads**: Added parent_thread_id uuid FK referencing threads(id)."
+      "descriptor": "Session: 2026-05-08 \u2014 B-102: Grader evaluation export",
+      "outcome": "**anvil/uplink_server.py**: Added export_grader_review(review_id) callable."
     }
   ],
   "current_directive": "Run B-084"
