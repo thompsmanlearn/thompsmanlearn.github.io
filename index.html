@@ -79,15 +79,15 @@
     <span class="dot"></span>
     <span style="font-size:.85rem;color:var(--muted)">Online</span>
     <span class="badge">Lean Mode</span>
-    <span class="badge">Updated 2026-05-09</span>
+    <span class="badge">Updated 2026-05-10</span>
   </div>
 
   <h2>System at a Glance</h2>
   <div class="stat-row">
     <div class="stat"><div class="stat-num">9</div><div class="stat-label">Active Agents</div></div>
-    <div class="stat"><div class="stat-num">255</div><div class="stat-label">Lessons</div></div>
+    <div class="stat"><div class="stat-num">259</div><div class="stat-label">Lessons</div></div>
     <div class="stat"><div class="stat-num">6</div><div class="stat-label">Skills</div></div>
-    <div class="stat"><div class="stat-num">B-114</div><div class="stat-label">Last Card</div></div>
+    <div class="stat"><div class="stat-num">B-117</div><div class="stat-label">Last Card</div></div>
   </div>
 
   <h2>Recent Sessions</h2>
@@ -104,57 +104,21 @@
     <div class="card-body"><em>No summary available.</em></div>
   </div>
   <div class="card">
-    <div class="card-title">Session: 2026-05-09 — B-114: Remove thumbs-up/down from Fleet tab &mdash; 2026-05-09</div>
-    <div class="card-body">Removed 👍 and 👎 Button components from agent card action_row</div>
+    <div class="card-title">B-117: Thread Research Agent with Brave &mdash; 2026-05-10</div>
+    <div class="card-body"><em>No summary available.</em></div>
   </div>
   <div class="card">
-    <div class="card-title">Session: 2026-05-09 — B-114: Comment-driven card generation and execution loop &mdash; 2026-05-09</div>
-    <div class="card-body">_next_card_number(): scans sessions/lean/ + BACKLOG.md for highest B-NNN, returns max+1</div>
+    <div class="card-title">Session: System Review &mdash; 2026-05-09</div>
+    <div class="card-body"><em>No summary available.</em></div>
   </div>
 
   <h2>Current Focus</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text">System review session. Three chapters + post-chapter work just landed. Examine, test, and revise before moving to Chapter 4.
-
-Read TRAJECTORY.md, USERS_MANUAL.md, and architecture/decisions/comment-driven-cards.md first.
-
-Then work through these in order — do not skip unless you find a blocker that requires redirecting:
-
-1. **Verify B-114 pipeline end-to-end.** B-115-cmt is in BACKLOG.md (a Sonnet-generated correction for architecture_review's description). Execute it: update the agent_registry description and schedule fields to reflect the actual run history. Then run the grader against it. Does it pass? The done-when criteria are in the card.
-
-2. **Test the comment-driven export.** Call export_comment_driven_results() (via /lesson_stats or directly). Verify the B-115-cmt entry appears with the original comment, card text, and grader verdict bundled correctly. Report the export output in the session artifact.
-
-3. **Work the curation queue.** 9 agents flagged as paused with no workflow_id in agent_feedback (action_session=capability_curator). For each, make a recommendation: retire (default — no workflow means nothing to restore) or note a reason to keep. Use the retire_agent() callable for any you retire in-session. Surface the full list and your decisions in the artifact.
-
-4. **Resolve &quot;Document AADP on the Site&quot; project.** A project_completion annotation exists (id: a1b2c3d4-0001-0000-0000-000000000000, all 8 nodes done). Bill hasn't confirmed or rejected. Check the project nodes — are they actually done? If yes, call confirm_project_complete(). If unclear, surface the question in the artifact for Bill.
-
-5. **Health check.** Run the standard health queries: unresolved errors, lesson store integrity (chromadb_id IS NULL count), session_memory entry count, /lesson_stats. Report findings. If anything is broken, fix it.
-
-6. **Revision pass.** After steps 1–5, list anything that needs follow-up: cards to write, patterns that are fragile, gaps in the new B-114 pipeline based on what you saw during execution. Surface these as annotations or a brief list in the artifact — don't build them in this session without Bill's confirmation.
-
-Scope: fix what you find in steps 1–4 directly. For step 6, surface only — don't expand scope mid-session. Two-hour ceiling.</div>
+    <div class="next-text">Run B-117</div>
   </div>
 
-  <h2>Active Project</h2>
-  <div class="project-card">
-    <div class="project-title">Document AADP on the Site</div>
-    <div class="project-goal">Build out thompsmanlearn.github.io into a full multi-page site documenting what AADP is, what it can do, how it works, and what is being built — visible to Bill…</div>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar" style="width:100%"></div>
-    </div>
-    <div class="progress-label">8 of 8 nodes complete</div>
-    <div class="node-list">
-    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Home page refinement</span><span class="node-type">write</span></div>
-    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Fleet page</span><span class="node-type">build</span></div>
-    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Capabilities page</span><span class="node-type">write</span></div>
-    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Architecture page</span><span class="node-type">write</span></div>
-    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Session log page</span><span class="node-type">build</span></div>
-    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Direction log page</span><span class="node-type">build</span></div>
-    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Navigation and multi-page structure</span><span class="node-type">build</span></div>
-    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Site polish</span><span class="node-type">polish</span></div>
-    </div>
-  </div>
+
 
   <h2>Give Direction</h2>
   <iframe
@@ -170,7 +134,7 @@ Scope: fix what you find in steps 1–4 directly. For step 6, surface only — d
   <div class="card">
     <div class="card-body">
       AADP runs on a Raspberry Pi 5 (16GB). It&rsquo;s always on. It runs 9 n8n workflow agents
-      that monitor system health, ingest research, synthesize findings, and manage 255 operational
+      that monitor system health, ingest research, synthesize findings, and manage 259 operational
       lessons. Claude Code is the primary builder &mdash; it reads directives, executes them, writes session
       artifacts, and leaves the system more capable after every session.<br><br>
       The long-term goal: Bill gives a high-level intention and the system autonomously researches,
@@ -181,7 +145,7 @@ Scope: fix what you find in steps 1–4 directly. For step 6, surface only — d
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-05-09 22:07 UTC
+    Generated 2026-05-10 03:57 UTC
   </div>
 </body>
 </html>

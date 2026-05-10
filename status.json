@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-09T22:07:09.585898+00:00",
+  "generated_at": "2026-05-10T03:57:11.761436+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 9,
-  "lesson_count": 255,
+  "lesson_count": 259,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -21,15 +21,15 @@
       "outcome": ""
     },
     {
-      "date": "2026-05-09",
-      "descriptor": "Session: 2026-05-09 \u2014 B-114: Remove thumbs-up/down from Flee",
-      "outcome": "Removed \ud83d\udc4d and \ud83d\udc4e Button components from agent card action_row"
+      "date": "2026-05-10",
+      "descriptor": "B-117: Thread Research Agent with Brave",
+      "outcome": ""
     },
     {
       "date": "2026-05-09",
-      "descriptor": "Session: 2026-05-09 \u2014 B-114: Comment-driven card generation ",
-      "outcome": "_next_card_number(): scans sessions/lean/ + BACKLOG.md for highest B-NNN, returns max+1"
+      "descriptor": "Session: System Review",
+      "outcome": ""
     }
   ],
-  "current_directive": "System review session. Three chapters + post-chapter work just landed. Examine, test, and revise before moving to Chapter 4.\n\nRead TRAJECTORY.md, USERS_MANUAL.md, and architecture/decisions/comment-driven-cards.md first.\n\nThen work through these in order \u2014 do not skip unless you find a blocker that requires redirecting:\n\n1. **Verify B-114 pipeline end-to-end.** B-115-cmt is in BACKLOG.md (a Sonnet-generated correction for architecture_review's description). Execute it: update the agent_registry description and schedule fields to reflect the actual run history. Then run the grader against it. Does it pass? The done-when criteria are in the card.\n\n2. **Test the comment-driven export.** Call export_comment_driven_results() (via /lesson_stats or directly). Verify the B-115-cmt entry appears with the original comment, card text, and grader verdict bundled correctly. Report the export output in the session artifact.\n\n3. **Work the curation queue.** 9 agents flagged as paused with no workflow_id in agent_feedback (action_session=capability_curator). For each, make a recommendation: retire (default \u2014 no workflow means nothing to restore) or note a reason to keep. Use the retire_agent() callable for any you retire in-session. Surface the full list and your decisions in the artifact.\n\n4. **Resolve \"Document AADP on the Site\" project.** A project_completion annotation exists (id: a1b2c3d4-0001-0000-0000-000000000000, all 8 nodes done). Bill hasn't confirmed or rejected. Check the project nodes \u2014 are they actually done? If yes, call confirm_project_complete(). If unclear, surface the question in the artifact for Bill.\n\n5. **Health check.** Run the standard health queries: unresolved errors, lesson store integrity (chromadb_id IS NULL count), session_memory entry count, /lesson_stats. Report findings. If anything is broken, fix it.\n\n6. **Revision pass.** After steps 1\u20135, list anything that needs follow-up: cards to write, patterns that are fragile, gaps in the new B-114 pipeline based on what you saw during execution. Surface these as annotations or a brief list in the artifact \u2014 don't build them in this session without Bill's confirmation.\n\nScope: fix what you find in steps 1\u20134 directly. For step 6, surface only \u2014 don't expand scope mid-session. Two-hour ceiling."
+  "current_directive": "Run B-117"
 }
