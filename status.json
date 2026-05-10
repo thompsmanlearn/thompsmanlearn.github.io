@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-10T03:57:11.761436+00:00",
+  "generated_at": "2026-05-10T04:30:50.343681+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 9,
-  "lesson_count": 259,
+  "lesson_count": 262,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -31,5 +31,5 @@
       "outcome": ""
     }
   ],
-  "current_directive": "Run B-117"
+  "current_directive": "Run B-119"
 }
