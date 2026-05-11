@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-11T02:05:05.278938+00:00",
+  "generated_at": "2026-05-11T09:00:13.490237+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 9,
-  "lesson_count": 268,
+  "lesson_count": 270,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -27,9 +27,9 @@
     },
     {
       "date": "2026-05-10",
-      "descriptor": "Session: B-128 Workpad Surface",
+      "descriptor": "2026-05-10 \u2014 B-129: Workpad Brave Search",
       "outcome": ""
     }
   ],
-  "current_directive": "Run B-128"
+  "current_directive": "Run B-129"
 }
