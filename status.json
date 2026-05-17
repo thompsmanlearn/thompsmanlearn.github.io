@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-17T09:00:13.497956+00:00",
+  "generated_at": "2026-05-17T20:24:23.648374+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
-  "lesson_count": 274,
+  "lesson_count": 280,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -21,15 +21,15 @@
       "outcome": ""
     },
     {
-      "date": "2026-05-16",
-      "descriptor": "2026-05-16 System Evaluation + B-130",
+      "date": "2026-05-17",
+      "descriptor": "Session Artifact \u2014 B-133 Pre-card Design Analysis: Boot Path",
       "outcome": ""
     },
     {
-      "date": "2026-05-16",
-      "descriptor": "B-130: Retire Two Superseded Agents, Wire agent_health_monit",
+      "date": "2026-05-17",
+      "descriptor": "Session Artifact: B-133 Boot Cleanup \u2014 Dead Code and Missing",
       "outcome": ""
     }
   ],
-  "current_directive": "Run B-129"
+  "current_directive": "Run B-133"
 }
