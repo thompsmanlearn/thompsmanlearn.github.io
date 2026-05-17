@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-16T09:00:13.495181+00:00",
+  "generated_at": "2026-05-17T09:00:13.497956+00:00",
   "system": "online",
   "mode": "lean",
-  "agent_count": 9,
-  "lesson_count": 270,
+  "agent_count": 7,
+  "lesson_count": 274,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -21,13 +21,13 @@
       "outcome": ""
     },
     {
-      "date": "2026-05-10",
-      "descriptor": "Session: Thread Research Pipeline Bug Fixes",
+      "date": "2026-05-16",
+      "descriptor": "2026-05-16 System Evaluation + B-130",
       "outcome": ""
     },
     {
-      "date": "2026-05-10",
-      "descriptor": "2026-05-10 \u2014 B-129: Workpad Brave Search",
+      "date": "2026-05-16",
+      "descriptor": "B-130: Retire Two Superseded Agents, Wire agent_health_monit",
       "outcome": ""
     }
   ],
