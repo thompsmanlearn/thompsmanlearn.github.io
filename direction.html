@@ -96,6 +96,46 @@
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
       <span class="badge" style="font-size:.7rem;">agent_build</span>
+      <span style="font-size:.75rem;color:var(--yellow);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-17</span>
+    </div>
+    <div class="card-body">Architecture review action: Add process-level checkpoints to evaluator during n8n workflow execution for structured mid-level supervision</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
+      <span class="badge" style="font-size:.7rem;">agent_build</span>
+      <span style="font-size:.75rem;color:var(--yellow);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-17</span>
+    </div>
+    <div class="card-body">Architecture review action: Add behavioral jailbreak detection to evaluator and scheduler safety checks before executing system-level operations</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
+      <span class="badge" style="font-size:.7rem;">agent_build</span>
+      <span style="font-size:.75rem;color:var(--yellow);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-17</span>
+    </div>
+    <div class="card-body">Architecture review action: Add aggressive context compression to lesson_injector when retrieving from ChromaDB to reduce token usage on resource-constrained hardware</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
+      <span class="badge" style="font-size:.7rem;">agent_build</span>
+      <span style="font-size:.75rem;color:var(--yellow);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-17</span>
+    </div>
+    <div class="card-body">Architecture review action: Integrate holistic failure diagnosis into evaluator to provide root-cause attribution for n8n workflow failures</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
+      <span class="badge" style="font-size:.7rem;">agent_build</span>
+      <span style="font-size:.75rem;color:var(--yellow);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-17</span>
+    </div>
+    <div class="card-body">Architecture review action: Add drift detection patterns and production evaluation criteria to evaluator component, integrate with stats_server for continuous monitoring</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
+      <span class="badge" style="font-size:.7rem;">agent_build</span>
       <span style="font-size:.75rem;color:var(--green);">●</span>
       <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-05-03</span>
     </div>
@@ -131,7 +171,7 @@
       <span style="font-size:.75rem;color:var(--green);">●</span>
       <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-07</span>
     </div>
-    <div class="card-body">Add cache_creation_input_tokens logging to the 4-Pillars Evaluator (kQ5OALBwexLQS7in). In the Write Eval Output node, add a field usage_cache_tokens from the Anthropic API response. This provides runt…</div>
+    <div class="card-body">4-pillars evaluator flagged V2 violation: workflow xNbmcFrNvqbmhlJW has both an internal Schedule Trigger (cron 0 14 * * *) and a webhook. Remove the Schedule Trigger node so it is webhook-only. Senti…</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
@@ -139,7 +179,7 @@
       <span style="font-size:.75rem;color:var(--green);">●</span>
       <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-07</span>
     </div>
-    <div class="card-body">4-pillars evaluator flagged V2 violation: workflow xNbmcFrNvqbmhlJW has both an internal Schedule Trigger (cron 0 14 * * *) and a webhook. Remove the Schedule Trigger node so it is webhook-only. Senti…</div>
+    <div class="card-body">Add cache_creation_input_tokens logging to the 4-Pillars Evaluator (kQ5OALBwexLQS7in). In the Write Eval Output node, add a field usage_cache_tokens from the Anthropic API response. This provides runt…</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
@@ -165,50 +205,10 @@
     </div>
     <div class="card-body">Investigate and document the minimum token threshold required for prompt caching to activate on Sonnet 4.6. Verify cache_control behavior and confirm findings match memory record project_prompt_cachin…</div>
   </div>
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
-      <span class="badge" style="font-size:.7rem;">agent_debug</span>
-      <span style="font-size:.75rem;color:var(--green);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
-    </div>
-    <div class="card-body">Fix arch_review backward loop: when run_architecture_review queues an implement work_queue item, immediately set research_papers.already_addressed_since=today for that paper. 3-line fix in stats_serve…</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
-      <span class="badge" style="font-size:.7rem;">agent_debug</span>
-      <span style="font-size:.75rem;color:var(--green);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
-    </div>
-    <div class="card-body">Fix session_notes consumed flag: session_notes_load currently marks notes consumed immediately. This is destructive — if the incoming session misses context, it is unrecoverable. Proposal: add a mode …</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
-      <span class="badge" style="font-size:.7rem;">self_diagnostic</span>
-      <span style="font-size:.75rem;color:var(--green);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
-    </div>
-    <div class="card-body">Audit the 4-pillars evaluator: run it against 3 known agents, examine scoring consistency, check if Haiku output matches schema, verify experimental_outputs writes. Question: is it producing scores th…</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
-      <span class="badge" style="font-size:.7rem;">self_diagnostic</span>
-      <span style="font-size:.75rem;color:var(--green);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
-    </div>
-    <div class="card-body">Audit session handoff mechanism end-to-end: does the hot handoff note actually reach the incoming session? Are session_notes consumed or re-read? Check whether the April 6 0934 session handoff note wa…</div>
-  </div>
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
-      <span class="badge" style="font-size:.7rem;">self_diagnostic</span>
-      <span style="font-size:.75rem;color:var(--green);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-06</span>
-    </div>
-    <div class="card-body">Verify prompt caching threshold behavior for Sonnet 4.6: confirm the ~2048-token system block requirement in practice. Check inject_context output sizes, measure whether cache_control is triggering on…</div>
-  </div>
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-05-17 20:24 UTC
+    Generated 2026-05-17 23:24 UTC
   </div>
 </body>
 </html>

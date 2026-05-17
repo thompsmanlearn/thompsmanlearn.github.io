@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-17T20:24:23.648374+00:00",
+  "generated_at": "2026-05-17T23:24:52.632099+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
-  "lesson_count": 280,
+  "lesson_count": 283,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -22,12 +22,12 @@
     },
     {
       "date": "2026-05-17",
-      "descriptor": "Session Artifact \u2014 B-133 Pre-card Design Analysis: Boot Path",
+      "descriptor": "Session: 2026-05-17 \u2014 B-135 Research Briefing + System Fixes",
       "outcome": ""
     },
     {
       "date": "2026-05-17",
-      "descriptor": "Session Artifact: B-133 Boot Cleanup \u2014 Dead Code and Missing",
+      "descriptor": "Session Artifact \u2014 B-133 Pre-card Design Analysis: Boot Path",
       "outcome": ""
     }
   ],
