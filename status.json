@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-22T09:00:02.932901+00:00",
+  "generated_at": "2026-05-23T04:48:08.504340+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
-  "lesson_count": 283,
+  "lesson_count": 286,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -31,5 +31,5 @@
       "outcome": ""
     }
   ],
-  "current_directive": "Run B-136"
+  "current_directive": "Retire the thread system\n\nThe thread system was never functional. Retire it cleanly.\n\nDone when:\n\n1. Threads tab removed from Form1/__init__.py \u2014 tab button, panel, and all methods: _build_threads_layout, _load_threads, _create_thread_clicked, _threads_filter_changed, _reload_threads, _build_thread_card, _load_thread_entries, _build_thread_actions, and any helper closures and state variables (_threads_state_filter, _threads_loaded) that only serve threads.\n\n2. Thread callables removed from uplink_server.py \u2014 all functions from create_thread through set_watch_state (~lines 2096\u20132950) that exclusively serve the thread system. Do not remove get_feedback_threads (line 1151) \u2014 it is used by the Research tab. Do not remove _insert_thread_entry if anything non-thread calls it (verify first).\n\n3. thread_research_agent retired \u2014 UPDATE agent_registry SET status = 'retired' WHERE agent_name = 'thread_research_agent'.\n\n4. Supabase tables left intact \u2014 do not drop threads, thread_entries, or any other table.\n\n5. Commit pushed to main.\n\nScope: client_code/Form1/__init__.py, anvil/uplink_server.py, agent_registry row. Do not touch: Research tab, get_feedback_threads, any other tab, any Supabase tables."
 }

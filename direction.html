@@ -76,7 +76,23 @@
   <h2>Current Directive</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text">Run B-136</div>
+    <div class="next-text">Retire the thread system
+
+The thread system was never functional. Retire it cleanly.
+
+Done when:
+
+1. Threads tab removed from Form1/__init__.py — tab button, panel, and all methods: _build_threads_layout, _load_threads, _create_thread_clicked, _threads_filter_changed, _reload_threads, _build_thread_card, _load_thread_entries, _build_thread_actions, and any helper closures and state variables (_threads_state_filter, _threads_loaded) that only serve threads.
+
+2. Thread callables removed from uplink_server.py — all functions from create_thread through set_watch_state (~lines 2096–2950) that exclusively serve the thread system. Do not remove get_feedback_threads (line 1151) — it is used by the Research tab. Do not remove _insert_thread_entry if anything non-thread calls it (verify first).
+
+3. thread_research_agent retired — UPDATE agent_registry SET status = 'retired' WHERE agent_name = 'thread_research_agent'.
+
+4. Supabase tables left intact — do not drop threads, thread_entries, or any other table.
+
+5. Commit pushed to main.
+
+Scope: client_code/Form1/__init__.py, anvil/uplink_server.py, agent_registry row. Do not touch: Research tab, get_feedback_threads, any other tab, any Supabase tables.</div>
   </div>
 
   <h2>Direction History</h2>
@@ -95,41 +111,49 @@
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
-      <span class="badge" style="font-size:.7rem;">agent_build</span>
+      <span class="badge" style="font-size:.7rem;">design</span>
       <span style="font-size:.75rem;color:var(--yellow);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-17</span>
+      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-23</span>
+    </div>
+    <div class="card-body">Design a simple responsive research capability to replace the thread system. Bill wants: question in → findings out, without thread management overhead. B-135 synthesis pattern (question → Brave/arXiv…</div>
+  </div>
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
+      <span class="badge" style="font-size:.7rem;">agent_build</span>
+      <span style="font-size:.75rem;color:var(--muted);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">failed &mdash; 2026-05-17</span>
     </div>
     <div class="card-body">Architecture review action: Add process-level checkpoints to evaluator during n8n workflow execution for structured mid-level supervision</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
       <span class="badge" style="font-size:.7rem;">agent_build</span>
-      <span style="font-size:.75rem;color:var(--yellow);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-17</span>
+      <span style="font-size:.75rem;color:var(--muted);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">failed &mdash; 2026-05-17</span>
     </div>
     <div class="card-body">Architecture review action: Add behavioral jailbreak detection to evaluator and scheduler safety checks before executing system-level operations</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
       <span class="badge" style="font-size:.7rem;">agent_build</span>
-      <span style="font-size:.75rem;color:var(--yellow);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-17</span>
+      <span style="font-size:.75rem;color:var(--muted);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">failed &mdash; 2026-05-17</span>
     </div>
     <div class="card-body">Architecture review action: Add aggressive context compression to lesson_injector when retrieving from ChromaDB to reduce token usage on resource-constrained hardware</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
       <span class="badge" style="font-size:.7rem;">agent_build</span>
-      <span style="font-size:.75rem;color:var(--yellow);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-17</span>
+      <span style="font-size:.75rem;color:var(--muted);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">failed &mdash; 2026-05-17</span>
     </div>
     <div class="card-body">Architecture review action: Integrate holistic failure diagnosis into evaluator to provide root-cause attribution for n8n workflow failures</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
       <span class="badge" style="font-size:.7rem;">agent_build</span>
-      <span style="font-size:.75rem;color:var(--yellow);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-17</span>
+      <span style="font-size:.75rem;color:var(--muted);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">failed &mdash; 2026-05-17</span>
     </div>
     <div class="card-body">Architecture review action: Add drift detection patterns and production evaluation criteria to evaluator component, integrate with stats_server for continuous monitoring</div>
   </div>
@@ -144,8 +168,8 @@
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
       <span class="badge" style="font-size:.7rem;">agent_build</span>
-      <span style="font-size:.75rem;color:var(--yellow);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">pending &mdash; 2026-05-03</span>
+      <span style="font-size:.75rem;color:var(--muted);">●</span>
+      <span style="font-size:.75rem;color:var(--muted);">failed &mdash; 2026-05-03</span>
     </div>
     <div class="card-body">Architecture review action: Extend evaluator component with SpecOps-like GUI testing module for Raspberry Pi deployment validation</div>
   </div>
@@ -171,7 +195,7 @@
       <span style="font-size:.75rem;color:var(--green);">●</span>
       <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-07</span>
     </div>
-    <div class="card-body">4-pillars evaluator flagged V2 violation: workflow xNbmcFrNvqbmhlJW has both an internal Schedule Trigger (cron 0 14 * * *) and a webhook. Remove the Schedule Trigger node so it is webhook-only. Senti…</div>
+    <div class="card-body">Add cache_creation_input_tokens logging to the 4-Pillars Evaluator (kQ5OALBwexLQS7in). In the Write Eval Output node, add a field usage_cache_tokens from the Anthropic API response. This provides runt…</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
@@ -179,7 +203,7 @@
       <span style="font-size:.75rem;color:var(--green);">●</span>
       <span style="font-size:.75rem;color:var(--muted);">complete &mdash; 2026-04-07</span>
     </div>
-    <div class="card-body">Add cache_creation_input_tokens logging to the 4-Pillars Evaluator (kQ5OALBwexLQS7in). In the Write Eval Output node, add a field usage_cache_tokens from the Anthropic API response. This provides runt…</div>
+    <div class="card-body">4-pillars evaluator flagged V2 violation: workflow xNbmcFrNvqbmhlJW has both an internal Schedule Trigger (cron 0 14 * * *) and a webhook. Remove the Schedule Trigger node so it is webhook-only. Senti…</div>
   </div>
   <div class="card">
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
@@ -208,7 +232,7 @@
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-05-22 09:00 UTC
+    Generated 2026-05-23 04:48 UTC
   </div>
 </body>
 </html>
