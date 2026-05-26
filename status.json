@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-25T09:00:13.504361+00:00",
+  "generated_at": "2026-05-26T04:18:20.948174+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
-  "lesson_count": 286,
+  "lesson_count": 288,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -21,15 +21,15 @@
       "outcome": ""
     },
     {
-      "date": "2026-05-17",
-      "descriptor": "Session: 2026-05-17 \u2014 B-135 Research Briefing + System Fixes",
+      "date": "2026-05-25",
+      "descriptor": "Session Artifact \u2014 2026-05-25-2115",
       "outcome": ""
     },
     {
       "date": "2026-05-17",
-      "descriptor": "Session Artifact \u2014 B-133 Pre-card Design Analysis: Boot Path",
+      "descriptor": "Session: 2026-05-17 \u2014 B-135 Research Briefing + System Fixes",
       "outcome": ""
     }
   ],
-  "current_directive": "Say \"Yar\" I am a pirate, and wait for Bill in the chat window."
+  "current_directive": "Run: B-137"
 }
