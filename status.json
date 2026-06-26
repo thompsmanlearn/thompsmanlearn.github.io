@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-26T01:55:39.246473+00:00",
+  "generated_at": "2026-06-26T02:00:22.152830+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
-  "lesson_count": 290,
+  "lesson_count": 291,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -31,5 +31,5 @@
       "outcome": ""
     }
   ],
-  "current_directive": "# Project Node: Node A: Scratch file write\n\n## Goal\n1. Use the Bash tool to append the line \"auto-cycle-test: Node A complete\" to ~/aadp/auto_cycle_test.txt (create the file if it does not exist).\n2. Confirm the line was written by reading the file.\n3. REQUIRED FINAL STEP \u2014 mark this node done. Run mcp__aadp__supabase_exec_sql with this exact SQL:\n   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='72f49312-1a3a-49ad-9316-db0ef37bc9d6';\n   Confirm the result shows status: ok before this session closes.\n\n## Context\nFirst node in the auto-cycle walk test (A\u2192B\u2192C). No dependencies.\n\n## Node ID\n72f49312-1a3a-49ad-9316-db0ef37bc9d6"
+  "current_directive": "# Project Node: Node B: Scratch file append\n\n## Goal\n1. Use the Bash tool to append the line \"auto-cycle-test: Node B complete\" to ~/aadp/auto_cycle_test.txt.\n2. Confirm the line was written by reading the file.\n3. REQUIRED FINAL STEP \u2014 mark this node done. Run mcp__aadp__supabase_exec_sql with this exact SQL:\n   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='913bfe8b-70e1-4859-b087-5d8ccb518668';\n   Confirm the result shows status: ok before this session closes.\n\n## Context\nSecond node in the auto-cycle walk test. Depends on Node A.\n\n## Node ID\n913bfe8b-70e1-4859-b087-5d8ccb518668"
 }

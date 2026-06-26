@@ -85,7 +85,7 @@
   <h2>System at a Glance</h2>
   <div class="stat-row">
     <div class="stat"><div class="stat-num">7</div><div class="stat-label">Active Agents</div></div>
-    <div class="stat"><div class="stat-num">290</div><div class="stat-label">Lessons</div></div>
+    <div class="stat"><div class="stat-num">291</div><div class="stat-label">Lessons</div></div>
     <div class="stat"><div class="stat-num">6</div><div class="stat-label">Skills</div></div>
     <div class="stat"><div class="stat-num">B-135</div><div class="stat-label">Last Card</div></div>
   </div>
@@ -115,20 +115,20 @@
   <h2>Current Focus</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text"># Project Node: Node A: Scratch file write
+    <div class="next-text"># Project Node: Node B: Scratch file append
 
 ## Goal
-1. Use the Bash tool to append the line &quot;auto-cycle-test: Node A complete&quot; to ~/aadp/auto_cycle_test.txt (create the file if it does not exist).
+1. Use the Bash tool to append the line &quot;auto-cycle-test: Node B complete&quot; to ~/aadp/auto_cycle_test.txt.
 2. Confirm the line was written by reading the file.
 3. REQUIRED FINAL STEP — mark this node done. Run mcp__aadp__supabase_exec_sql with this exact SQL:
-   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='72f49312-1a3a-49ad-9316-db0ef37bc9d6';
+   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='913bfe8b-70e1-4859-b087-5d8ccb518668';
    Confirm the result shows status: ok before this session closes.
 
 ## Context
-First node in the auto-cycle walk test (A→B→C). No dependencies.
+Second node in the auto-cycle walk test. Depends on Node A.
 
 ## Node ID
-72f49312-1a3a-49ad-9316-db0ef37bc9d6</div>
+913bfe8b-70e1-4859-b087-5d8ccb518668</div>
   </div>
 
   <h2>Active Project</h2>
@@ -136,13 +136,13 @@ First node in the auto-cycle walk test (A→B→C). No dependencies.
     <div class="project-title">Auto-Cycle Walk Test</div>
     <div class="project-goal">Walk 3 sequential nodes (A→B→C) to field-test the auto-cycle chain.</div>
     <div class="progress-bar-wrap">
-      <div class="progress-bar" style="width:33%"></div>
+      <div class="progress-bar" style="width:66%"></div>
     </div>
-    <div class="progress-label">1 of 3 nodes complete</div>
+    <div class="progress-label">2 of 3 nodes complete</div>
     <div class="node-list">
-    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Node B: Scratch file append</span><span class="node-type">build</span></div>
     <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Node C: Scratch file verify</span><span class="node-type">build</span></div>
     <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node A: Scratch file write</span><span class="node-type">build</span></div>
+    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node B: Scratch file append</span><span class="node-type">build</span></div>
     </div>
   </div>
 
@@ -160,7 +160,7 @@ First node in the auto-cycle walk test (A→B→C). No dependencies.
   <div class="card">
     <div class="card-body">
       AADP runs on a Raspberry Pi 5 (16GB). It&rsquo;s always on. It runs 7 n8n workflow agents
-      that monitor system health, ingest research, synthesize findings, and manage 290 operational
+      that monitor system health, ingest research, synthesize findings, and manage 291 operational
       lessons. Claude Code is the primary builder &mdash; it reads directives, executes them, writes session
       artifacts, and leaves the system more capable after every session.<br><br>
       The long-term goal: Bill gives a high-level intention and the system autonomously researches,
@@ -171,7 +171,7 @@ First node in the auto-cycle walk test (A→B→C). No dependencies.
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-06-26 01:55 UTC
+    Generated 2026-06-26 02:00 UTC
   </div>
 </body>
 </html>

@@ -76,20 +76,20 @@
   <h2>Current Directive</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text"># Project Node: Node A: Scratch file write
+    <div class="next-text"># Project Node: Node B: Scratch file append
 
 ## Goal
-1. Use the Bash tool to append the line &quot;auto-cycle-test: Node A complete&quot; to ~/aadp/auto_cycle_test.txt (create the file if it does not exist).
+1. Use the Bash tool to append the line &quot;auto-cycle-test: Node B complete&quot; to ~/aadp/auto_cycle_test.txt.
 2. Confirm the line was written by reading the file.
 3. REQUIRED FINAL STEP — mark this node done. Run mcp__aadp__supabase_exec_sql with this exact SQL:
-   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='72f49312-1a3a-49ad-9316-db0ef37bc9d6';
+   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='913bfe8b-70e1-4859-b087-5d8ccb518668';
    Confirm the result shows status: ok before this session closes.
 
 ## Context
-First node in the auto-cycle walk test (A→B→C). No dependencies.
+Second node in the auto-cycle walk test. Depends on Node A.
 
 ## Node ID
-72f49312-1a3a-49ad-9316-db0ef37bc9d6</div>
+913bfe8b-70e1-4859-b087-5d8ccb518668</div>
   </div>
 
   <h2>Direction History</h2>
@@ -202,18 +202,10 @@ First node in the auto-cycle walk test (A→B→C). No dependencies.
     </div>
     <div class="card-body">Architecture review action: Integrate holistic failure diagnosis into evaluator to provide root-cause attribution for n8n workflow failures</div>
   </div>
-  <div class="card">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;">
-      <span class="badge" style="font-size:.7rem;">agent_build</span>
-      <span style="font-size:.75rem;color:var(--muted);">●</span>
-      <span style="font-size:.75rem;color:var(--muted);">failed &mdash; 2026-05-17</span>
-    </div>
-    <div class="card-body">Architecture review action: Add drift detection patterns and production evaluation criteria to evaluator component, integrate with stats_server for continuous monitoring</div>
-  </div>
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-06-26 01:55 UTC
+    Generated 2026-06-26 02:00 UTC
   </div>
 </body>
 </html>
