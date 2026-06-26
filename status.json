@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T02:05:20.139573+00:00",
+  "generated_at": "2026-06-26T02:52:09.951832+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
@@ -31,5 +31,5 @@
       "outcome": ""
     }
   ],
-  "current_directive": "# Project Node: Node C: Scratch file verify\n\n## Goal\n1. Use the Bash tool to append the line \"auto-cycle-test: Node C complete\" to ~/aadp/auto_cycle_test.txt.\n2. Read ~/aadp/auto_cycle_test.txt and verify all three lines (Node A, Node B, Node C) are present.\n3. REQUIRED FINAL STEP \u2014 mark this node done. Run mcp__aadp__supabase_exec_sql with this exact SQL:\n   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='571903b5-60ea-4ff9-b258-77f645c6fa41';\n   Confirm the result shows status: ok before this session closes.\n\n## Context\nThird and final node in the auto-cycle walk test. Depends on Node B.\n\n## Node ID\n571903b5-60ea-4ff9-b258-77f645c6fa41"
+  "current_directive": "# Project Node: Node 1: Boot-chain docs\n\n## Goal\n\nPerform a reader audit for 6 boot-chain documents in ~/aadp/claudis/.\n\nFor each document, grep the following files for the document filename (case-insensitive):\n  ~/aadp/claudis/sentinel/lean_runner.sh\n  ~/aadp/claudis/LEAN_BOOT.md\n  ~/aadp/mcp-server/.claude/skills/bootstrap.md\n  ~/aadp/stats-server/stats_server.py\n  ~/aadp/thompsmanlearn.github.io/generate_site.py\n  ~/aadp/claudis/anvil/uplink_server.py\n\nClassify each as:\n  MACHINE-READ \u2014 filename appears in at least one grep target (cite which)\n  MAYBE-HUMAN-READ \u2014 not machine-read, but plausibly read by a human or desktop session (explain why)\n  NO READER FOUND \u2014 nothing references it\n\nDocuments to classify:\n  1. CONTEXT.md\n  2. CONVENTIONS.md\n  3. TRAJECTORY.md\n  4. DIRECTIVES.md\n  5. BACKLOG.md\n  6. LEAN_BOOT.md\n\nRun: mkdir -p ~/aadp/root_doc_audit\nWrite findings to ~/aadp/root_doc_audit/node1.md. Include grep evidence per file (which grep targets matched).\n\nREQUIRED FINAL STEP \u2014 mark this node done. Run mcp__aadp__supabase_exec_sql with this SQL:\nUPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='8be3f7b3-50e0-4331-bf93-d9410c5e8091';\nConfirm result shows status: ok before this session closes.\n\n## Context\nClassify 6 boot-chain docs: CONTEXT, CONVENTIONS, TRAJECTORY, DIRECTIVES, BACKLOG, LEAN_BOOT. No deps \u2014 runs in parallel with nodes 2/3/4.\n\n## Node ID\n8be3f7b3-50e0-4331-bf93-d9410c5e8091"
 }
