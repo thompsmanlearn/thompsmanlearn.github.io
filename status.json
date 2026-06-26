@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T15:12:01.252179+00:00",
+  "generated_at": "2026-06-26T15:43:56.386984+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
@@ -31,5 +31,5 @@
       "outcome": ""
     }
   ],
-  "current_directive": "# Project Node: Node 5: Collation\n\n## Goal\n\nCollation pass only. Do NOT perform new analysis or grep \u2014 only read and arrange existing output.\n\nStep 1: Read all four audit files:\n  ~/aadp/root_doc_audit/node1.md\n  ~/aadp/root_doc_audit/node2.md\n  ~/aadp/root_doc_audit/node3.md\n  ~/aadp/root_doc_audit/node4.md\n\nStep 2: Write ~/aadp/root_doc_audit/SUMMARY.md with this structure:\n\n# Root Doc Reader Audit \u2014 SUMMARY\n\n## MACHINE-READ\n[every file classified as MACHINE-READ, with which scripts reference it, from the node reports]\n\n## MAYBE-HUMAN-READ\n[every file classified as MAYBE-HUMAN-READ, with the reasoning from the node reports]\n\n## NO READER FOUND\n[every file with no reader found]\n\nDo not add judgment, recommendations, or decisions about what to cut. Bill and a desktop session will read this bundle and decide.\n\nREQUIRED FINAL STEP \u2014 mark this node done. Run mcp__aadp__supabase_exec_sql with this SQL:\nUPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='611f9811-cb54-4239-af0c-9a33b0f0dac1';\nConfirm result shows status: ok before this session closes.\n\n\n## Context\nCollate node1-4 audit files into SUMMARY.md under three buckets. No new analysis \u2014 pure assembly. Depends on all four predecessors.\n\n## Node ID\n611f9811-cb54-4239-af0c-9a33b0f0dac1"
+  "current_directive": "# Project Node: Node 1: Passing control\n\n## Goal\nWrite the line \"grader-test: Node 1 passed\" to ~/aadp/grader_test.txt using the Bash tool (create the file if it does not exist). Confirm the file was written by reading it back.\n\n## Context\nTrivially passable node. No deps. Used to confirm grader marks passing nodes done via lean_runner (not directive SQL). Do NOT include any SQL to mark this node done \u2014 that is now lean_runner's job.\n\n## Node ID\n2165e3d0-8202-45c3-ba70-84ac0f98720a"
 }

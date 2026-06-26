@@ -76,43 +76,16 @@
   <h2>Current Directive</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text"># Project Node: Node 5: Collation
+    <div class="next-text"># Project Node: Node 1: Passing control
 
 ## Goal
-
-Collation pass only. Do NOT perform new analysis or grep — only read and arrange existing output.
-
-Step 1: Read all four audit files:
-  ~/aadp/root_doc_audit/node1.md
-  ~/aadp/root_doc_audit/node2.md
-  ~/aadp/root_doc_audit/node3.md
-  ~/aadp/root_doc_audit/node4.md
-
-Step 2: Write ~/aadp/root_doc_audit/SUMMARY.md with this structure:
-
-# Root Doc Reader Audit — SUMMARY
-
-## MACHINE-READ
-[every file classified as MACHINE-READ, with which scripts reference it, from the node reports]
-
-## MAYBE-HUMAN-READ
-[every file classified as MAYBE-HUMAN-READ, with the reasoning from the node reports]
-
-## NO READER FOUND
-[every file with no reader found]
-
-Do not add judgment, recommendations, or decisions about what to cut. Bill and a desktop session will read this bundle and decide.
-
-REQUIRED FINAL STEP — mark this node done. Run mcp__aadp__supabase_exec_sql with this SQL:
-UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='611f9811-cb54-4239-af0c-9a33b0f0dac1';
-Confirm result shows status: ok before this session closes.
-
+Write the line &quot;grader-test: Node 1 passed&quot; to ~/aadp/grader_test.txt using the Bash tool (create the file if it does not exist). Confirm the file was written by reading it back.
 
 ## Context
-Collate node1-4 audit files into SUMMARY.md under three buckets. No new analysis — pure assembly. Depends on all four predecessors.
+Trivially passable node. No deps. Used to confirm grader marks passing nodes done via lean_runner (not directive SQL). Do NOT include any SQL to mark this node done — that is now lean_runner's job.
 
 ## Node ID
-611f9811-cb54-4239-af0c-9a33b0f0dac1</div>
+2165e3d0-8202-45c3-ba70-84ac0f98720a</div>
   </div>
 
   <h2>Direction History</h2>
@@ -188,7 +161,7 @@ Collate node1-4 audit files into SUMMARY.md under three buckets. No new analysis
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-06-26 15:12 UTC
+    Generated 2026-06-26 15:43 UTC
   </div>
 </body>
 </html>
