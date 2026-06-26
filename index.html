@@ -115,42 +115,45 @@
   <h2>Current Focus</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text"># Project Node: Node 4: Catch-all
+    <div class="next-text"># Project Node: Node 2: Brief/carry docs
 
 ## Goal
 
-Catch-all audit pass. Goal: ensure no root-level .md in ~/aadp/claudis/ is missed.
+Perform a reader audit for 5 brief/carry documents in ~/aadp/claudis/.
 
-Step 1: Run `ls ~/aadp/claudis/*.md` and list every file found.
-
-Step 2: These files are covered by nodes 1, 2, and 3:
-  Node 1: CONTEXT.md, CONVENTIONS.md, TRAJECTORY.md, DIRECTIVES.md, BACKLOG.md, LEAN_BOOT.md
-  Node 2: CARRY_HEALTH.md, CARRY_PROPOSALS.md, CARRY_QUESTIONS.md, COLLABORATOR_BRIEF.md, DEEP_DIVE_BRIEF.md
-  Node 3: PROJECT_STATE.md, INQUIRIES.md, USERS_MANUAL.md, bootstrap.md, anvil-redesign-principles-and-plan.md
-
-Step 3: For every file NOT in the lists above, perform the reader audit using the same grep targets:
+For each document, grep the following files for the document filename (case-insensitive):
   ~/aadp/claudis/sentinel/lean_runner.sh
   ~/aadp/claudis/LEAN_BOOT.md
   ~/aadp/mcp-server/.claude/skills/bootstrap.md
   ~/aadp/stats-server/stats_server.py
   ~/aadp/thompsmanlearn.github.io/generate_site.py
   ~/aadp/claudis/anvil/uplink_server.py
-Classify as MACHINE-READ / MAYBE-HUMAN-READ / NO READER FOUND.
+
+Classify each as:
+  MACHINE-READ — filename appears in at least one grep target (cite which)
+  MAYBE-HUMAN-READ — not machine-read, but plausibly read by a human or desktop session (explain why)
+  NO READER FOUND — nothing references it
+
+Documents to classify:
+  1. CARRY_HEALTH.md
+  2. CARRY_PROPOSALS.md
+  3. CARRY_QUESTIONS.md
+  4. COLLABORATOR_BRIEF.md
+  5. DEEP_DIVE_BRIEF.md
 
 Run: mkdir -p ~/aadp/root_doc_audit
-Write findings to ~/aadp/root_doc_audit/node4.md.
-If no uncovered files remain, write a confirmation that all 16 files are accounted for.
+Write findings to ~/aadp/root_doc_audit/node2.md. Include grep evidence per file.
 
 REQUIRED FINAL STEP — mark this node done. Run mcp__aadp__supabase_exec_sql with this SQL:
-UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='c766b0fc-7ddc-4b6d-bcae-2174fa8b0aba';
+UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='f2a12b32-e3dd-4809-9180-6c6b3bc1f22e';
 Confirm result shows status: ok before this session closes.
 
 
 ## Context
-List all root .md files in claudis, exclude those covered by nodes 1/2/3, classify whatever remains. No deps — runs in parallel with nodes 1/2/3.
+Classify 5 brief/carry docs: CARRY_HEALTH, CARRY_PROPOSALS, CARRY_QUESTIONS, COLLABORATOR_BRIEF, DEEP_DIVE_BRIEF. No deps — runs in parallel with nodes 1/3/4.
 
 ## Node ID
-c766b0fc-7ddc-4b6d-bcae-2174fa8b0aba</div>
+f2a12b32-e3dd-4809-9180-6c6b3bc1f22e</div>
   </div>
 
   <h2>Active Project</h2>
@@ -195,7 +198,7 @@ c766b0fc-7ddc-4b6d-bcae-2174fa8b0aba</div>
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-06-26 03:05 UTC
+    Generated 2026-06-26 09:00 UTC
   </div>
 </body>
 </html>
