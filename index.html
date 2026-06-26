@@ -115,11 +115,11 @@
   <h2>Current Focus</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text"># Project Node: Node 1: Boot-chain docs
+    <div class="next-text"># Project Node: Node 3: State/process docs
 
 ## Goal
 
-Perform a reader audit for 6 boot-chain documents in ~/aadp/claudis/.
+Perform a reader audit for 5 state/process documents in ~/aadp/claudis/.
 
 For each document, grep the following files for the document filename (case-insensitive):
   ~/aadp/claudis/sentinel/lean_runner.sh
@@ -135,25 +135,25 @@ Classify each as:
   NO READER FOUND — nothing references it
 
 Documents to classify:
-  1. CONTEXT.md
-  2. CONVENTIONS.md
-  3. TRAJECTORY.md
-  4. DIRECTIVES.md
-  5. BACKLOG.md
-  6. LEAN_BOOT.md
+  1. PROJECT_STATE.md  (~/aadp/claudis/PROJECT_STATE.md — the file being classified, not the grep targets)
+  2. INQUIRIES.md
+  3. USERS_MANUAL.md
+  4. bootstrap.md  (~/aadp/claudis/bootstrap.md — the root-level file; the skill bootstrap.md at mcp-server/.claude/skills/ is a grep target, not this file)
+  5. anvil-redesign-principles-and-plan.md
 
 Run: mkdir -p ~/aadp/root_doc_audit
-Write findings to ~/aadp/root_doc_audit/node1.md. Include grep evidence per file (which grep targets matched).
+Write findings to ~/aadp/root_doc_audit/node3.md. Include grep evidence per file.
 
 REQUIRED FINAL STEP — mark this node done. Run mcp__aadp__supabase_exec_sql with this SQL:
-UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='8be3f7b3-50e0-4331-bf93-d9410c5e8091';
+UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='1e580d20-2f25-497c-8a67-4cde0ebc4413';
 Confirm result shows status: ok before this session closes.
 
+
 ## Context
-Classify 6 boot-chain docs: CONTEXT, CONVENTIONS, TRAJECTORY, DIRECTIVES, BACKLOG, LEAN_BOOT. No deps — runs in parallel with nodes 2/3/4.
+Classify 5 state/process docs: PROJECT_STATE, INQUIRIES, USERS_MANUAL, bootstrap, anvil-redesign-principles-and-plan. No deps — runs in parallel with nodes 1/2/4.
 
 ## Node ID
-8be3f7b3-50e0-4331-bf93-d9410c5e8091</div>
+1e580d20-2f25-497c-8a67-4cde0ebc4413</div>
   </div>
 
   <h2>Active Project</h2>
@@ -161,15 +161,15 @@ Classify 6 boot-chain docs: CONTEXT, CONVENTIONS, TRAJECTORY, DIRECTIVES, BACKLO
     <div class="project-title">Root Doc Reader Audit</div>
     <div class="project-goal">Audit every root-level .md in ~/aadp/claudis/ — determine its reader and sort into MACHINE-READ, MAYBE-HUMAN-READ, or NO READER FOUND.</div>
     <div class="progress-bar-wrap">
-      <div class="progress-bar" style="width:20%"></div>
+      <div class="progress-bar" style="width:40%"></div>
     </div>
-    <div class="progress-label">1 of 5 nodes complete</div>
+    <div class="progress-label">2 of 5 nodes complete</div>
     <div class="node-list">
     <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node 1: Boot-chain docs</span><span class="node-type">build</span></div>
     <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Node 2: Brief/carry docs</span><span class="node-type">build</span></div>
-    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Node 3: State/process docs</span><span class="node-type">build</span></div>
     <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Node 4: Catch-all</span><span class="node-type">build</span></div>
     <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Node 5: Collation</span><span class="node-type">build</span></div>
+    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node 3: State/process docs</span><span class="node-type">build</span></div>
     </div>
   </div>
 
@@ -198,7 +198,7 @@ Classify 6 boot-chain docs: CONTEXT, CONVENTIONS, TRAJECTORY, DIRECTIVES, BACKLO
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-06-26 02:52 UTC
+    Generated 2026-06-26 02:59 UTC
   </div>
 </body>
 </html>
