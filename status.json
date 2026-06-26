@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T02:00:22.152830+00:00",
+  "generated_at": "2026-06-26T02:05:20.139573+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
@@ -31,5 +31,5 @@
       "outcome": ""
     }
   ],
-  "current_directive": "# Project Node: Node B: Scratch file append\n\n## Goal\n1. Use the Bash tool to append the line \"auto-cycle-test: Node B complete\" to ~/aadp/auto_cycle_test.txt.\n2. Confirm the line was written by reading the file.\n3. REQUIRED FINAL STEP \u2014 mark this node done. Run mcp__aadp__supabase_exec_sql with this exact SQL:\n   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='913bfe8b-70e1-4859-b087-5d8ccb518668';\n   Confirm the result shows status: ok before this session closes.\n\n## Context\nSecond node in the auto-cycle walk test. Depends on Node A.\n\n## Node ID\n913bfe8b-70e1-4859-b087-5d8ccb518668"
+  "current_directive": "# Project Node: Node C: Scratch file verify\n\n## Goal\n1. Use the Bash tool to append the line \"auto-cycle-test: Node C complete\" to ~/aadp/auto_cycle_test.txt.\n2. Read ~/aadp/auto_cycle_test.txt and verify all three lines (Node A, Node B, Node C) are present.\n3. REQUIRED FINAL STEP \u2014 mark this node done. Run mcp__aadp__supabase_exec_sql with this exact SQL:\n   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='571903b5-60ea-4ff9-b258-77f645c6fa41';\n   Confirm the result shows status: ok before this session closes.\n\n## Context\nThird and final node in the auto-cycle walk test. Depends on Node B.\n\n## Node ID\n571903b5-60ea-4ff9-b258-77f645c6fa41"
 }

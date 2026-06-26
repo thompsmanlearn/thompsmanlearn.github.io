@@ -115,20 +115,20 @@
   <h2>Current Focus</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text"># Project Node: Node B: Scratch file append
+    <div class="next-text"># Project Node: Node C: Scratch file verify
 
 ## Goal
-1. Use the Bash tool to append the line &quot;auto-cycle-test: Node B complete&quot; to ~/aadp/auto_cycle_test.txt.
-2. Confirm the line was written by reading the file.
+1. Use the Bash tool to append the line &quot;auto-cycle-test: Node C complete&quot; to ~/aadp/auto_cycle_test.txt.
+2. Read ~/aadp/auto_cycle_test.txt and verify all three lines (Node A, Node B, Node C) are present.
 3. REQUIRED FINAL STEP — mark this node done. Run mcp__aadp__supabase_exec_sql with this exact SQL:
-   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='913bfe8b-70e1-4859-b087-5d8ccb518668';
+   UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='571903b5-60ea-4ff9-b258-77f645c6fa41';
    Confirm the result shows status: ok before this session closes.
 
 ## Context
-Second node in the auto-cycle walk test. Depends on Node A.
+Third and final node in the auto-cycle walk test. Depends on Node B.
 
 ## Node ID
-913bfe8b-70e1-4859-b087-5d8ccb518668</div>
+571903b5-60ea-4ff9-b258-77f645c6fa41</div>
   </div>
 
   <h2>Active Project</h2>
@@ -136,13 +136,13 @@ Second node in the auto-cycle walk test. Depends on Node A.
     <div class="project-title">Auto-Cycle Walk Test</div>
     <div class="project-goal">Walk 3 sequential nodes (A→B→C) to field-test the auto-cycle chain.</div>
     <div class="progress-bar-wrap">
-      <div class="progress-bar" style="width:66%"></div>
+      <div class="progress-bar" style="width:100%"></div>
     </div>
-    <div class="progress-label">2 of 3 nodes complete</div>
+    <div class="progress-label">3 of 3 nodes complete</div>
     <div class="node-list">
-    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Node C: Scratch file verify</span><span class="node-type">build</span></div>
     <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node A: Scratch file write</span><span class="node-type">build</span></div>
     <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node B: Scratch file append</span><span class="node-type">build</span></div>
+    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node C: Scratch file verify</span><span class="node-type">build</span></div>
     </div>
   </div>
 
@@ -171,7 +171,7 @@ Second node in the auto-cycle walk test. Depends on Node A.
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-06-26 02:00 UTC
+    Generated 2026-06-26 02:05 UTC
   </div>
 </body>
 </html>
