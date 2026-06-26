@@ -76,45 +76,42 @@
   <h2>Current Directive</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text"># Project Node: Node 3: State/process docs
+    <div class="next-text"># Project Node: Node 4: Catch-all
 
 ## Goal
 
-Perform a reader audit for 5 state/process documents in ~/aadp/claudis/.
+Catch-all audit pass. Goal: ensure no root-level .md in ~/aadp/claudis/ is missed.
 
-For each document, grep the following files for the document filename (case-insensitive):
+Step 1: Run `ls ~/aadp/claudis/*.md` and list every file found.
+
+Step 2: These files are covered by nodes 1, 2, and 3:
+  Node 1: CONTEXT.md, CONVENTIONS.md, TRAJECTORY.md, DIRECTIVES.md, BACKLOG.md, LEAN_BOOT.md
+  Node 2: CARRY_HEALTH.md, CARRY_PROPOSALS.md, CARRY_QUESTIONS.md, COLLABORATOR_BRIEF.md, DEEP_DIVE_BRIEF.md
+  Node 3: PROJECT_STATE.md, INQUIRIES.md, USERS_MANUAL.md, bootstrap.md, anvil-redesign-principles-and-plan.md
+
+Step 3: For every file NOT in the lists above, perform the reader audit using the same grep targets:
   ~/aadp/claudis/sentinel/lean_runner.sh
   ~/aadp/claudis/LEAN_BOOT.md
   ~/aadp/mcp-server/.claude/skills/bootstrap.md
   ~/aadp/stats-server/stats_server.py
   ~/aadp/thompsmanlearn.github.io/generate_site.py
   ~/aadp/claudis/anvil/uplink_server.py
-
-Classify each as:
-  MACHINE-READ — filename appears in at least one grep target (cite which)
-  MAYBE-HUMAN-READ — not machine-read, but plausibly read by a human or desktop session (explain why)
-  NO READER FOUND — nothing references it
-
-Documents to classify:
-  1. PROJECT_STATE.md  (~/aadp/claudis/PROJECT_STATE.md — the file being classified, not the grep targets)
-  2. INQUIRIES.md
-  3. USERS_MANUAL.md
-  4. bootstrap.md  (~/aadp/claudis/bootstrap.md — the root-level file; the skill bootstrap.md at mcp-server/.claude/skills/ is a grep target, not this file)
-  5. anvil-redesign-principles-and-plan.md
+Classify as MACHINE-READ / MAYBE-HUMAN-READ / NO READER FOUND.
 
 Run: mkdir -p ~/aadp/root_doc_audit
-Write findings to ~/aadp/root_doc_audit/node3.md. Include grep evidence per file.
+Write findings to ~/aadp/root_doc_audit/node4.md.
+If no uncovered files remain, write a confirmation that all 16 files are accounted for.
 
 REQUIRED FINAL STEP — mark this node done. Run mcp__aadp__supabase_exec_sql with this SQL:
-UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='1e580d20-2f25-497c-8a67-4cde0ebc4413';
+UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='c766b0fc-7ddc-4b6d-bcae-2174fa8b0aba';
 Confirm result shows status: ok before this session closes.
 
 
 ## Context
-Classify 5 state/process docs: PROJECT_STATE, INQUIRIES, USERS_MANUAL, bootstrap, anvil-redesign-principles-and-plan. No deps — runs in parallel with nodes 1/2/4.
+List all root .md files in claudis, exclude those covered by nodes 1/2/3, classify whatever remains. No deps — runs in parallel with nodes 1/2/3.
 
 ## Node ID
-1e580d20-2f25-497c-8a67-4cde0ebc4413</div>
+c766b0fc-7ddc-4b6d-bcae-2174fa8b0aba</div>
   </div>
 
   <h2>Direction History</h2>
@@ -206,7 +203,7 @@ Classify 5 state/process docs: PROJECT_STATE, INQUIRIES, USERS_MANUAL, bootstrap
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-06-26 02:59 UTC
+    Generated 2026-06-26 03:05 UTC
   </div>
 </body>
 </html>
