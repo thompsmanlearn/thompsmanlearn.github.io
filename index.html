@@ -115,45 +115,43 @@
   <h2>Current Focus</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text"># Project Node: Node 2: Brief/carry docs
+    <div class="next-text"># Project Node: Node 5: Collation
 
 ## Goal
 
-Perform a reader audit for 5 brief/carry documents in ~/aadp/claudis/.
+Collation pass only. Do NOT perform new analysis or grep — only read and arrange existing output.
 
-For each document, grep the following files for the document filename (case-insensitive):
-  ~/aadp/claudis/sentinel/lean_runner.sh
-  ~/aadp/claudis/LEAN_BOOT.md
-  ~/aadp/mcp-server/.claude/skills/bootstrap.md
-  ~/aadp/stats-server/stats_server.py
-  ~/aadp/thompsmanlearn.github.io/generate_site.py
-  ~/aadp/claudis/anvil/uplink_server.py
+Step 1: Read all four audit files:
+  ~/aadp/root_doc_audit/node1.md
+  ~/aadp/root_doc_audit/node2.md
+  ~/aadp/root_doc_audit/node3.md
+  ~/aadp/root_doc_audit/node4.md
 
-Classify each as:
-  MACHINE-READ — filename appears in at least one grep target (cite which)
-  MAYBE-HUMAN-READ — not machine-read, but plausibly read by a human or desktop session (explain why)
-  NO READER FOUND — nothing references it
+Step 2: Write ~/aadp/root_doc_audit/SUMMARY.md with this structure:
 
-Documents to classify:
-  1. CARRY_HEALTH.md
-  2. CARRY_PROPOSALS.md
-  3. CARRY_QUESTIONS.md
-  4. COLLABORATOR_BRIEF.md
-  5. DEEP_DIVE_BRIEF.md
+# Root Doc Reader Audit — SUMMARY
 
-Run: mkdir -p ~/aadp/root_doc_audit
-Write findings to ~/aadp/root_doc_audit/node2.md. Include grep evidence per file.
+## MACHINE-READ
+[every file classified as MACHINE-READ, with which scripts reference it, from the node reports]
+
+## MAYBE-HUMAN-READ
+[every file classified as MAYBE-HUMAN-READ, with the reasoning from the node reports]
+
+## NO READER FOUND
+[every file with no reader found]
+
+Do not add judgment, recommendations, or decisions about what to cut. Bill and a desktop session will read this bundle and decide.
 
 REQUIRED FINAL STEP — mark this node done. Run mcp__aadp__supabase_exec_sql with this SQL:
-UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='f2a12b32-e3dd-4809-9180-6c6b3bc1f22e';
+UPDATE aadp_project_nodes SET status='done', updated_at=NOW() WHERE id='611f9811-cb54-4239-af0c-9a33b0f0dac1';
 Confirm result shows status: ok before this session closes.
 
 
 ## Context
-Classify 5 brief/carry docs: CARRY_HEALTH, CARRY_PROPOSALS, CARRY_QUESTIONS, COLLABORATOR_BRIEF, DEEP_DIVE_BRIEF. No deps — runs in parallel with nodes 1/3/4.
+Collate node1-4 audit files into SUMMARY.md under three buckets. No new analysis — pure assembly. Depends on all four predecessors.
 
 ## Node ID
-f2a12b32-e3dd-4809-9180-6c6b3bc1f22e</div>
+611f9811-cb54-4239-af0c-9a33b0f0dac1</div>
   </div>
 
   <h2>Active Project</h2>
@@ -161,15 +159,15 @@ f2a12b32-e3dd-4809-9180-6c6b3bc1f22e</div>
     <div class="project-title">Root Doc Reader Audit</div>
     <div class="project-goal">Audit every root-level .md in ~/aadp/claudis/ — determine its reader and sort into MACHINE-READ, MAYBE-HUMAN-READ, or NO READER FOUND.</div>
     <div class="progress-bar-wrap">
-      <div class="progress-bar" style="width:80%"></div>
+      <div class="progress-bar" style="width:100%"></div>
     </div>
-    <div class="progress-label">4 of 5 nodes complete</div>
+    <div class="progress-label">5 of 5 nodes complete</div>
     <div class="node-list">
     <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node 1: Boot-chain docs</span><span class="node-type">build</span></div>
-    <div class="node-row"><span class="node-icon">⬜</span><span class="node-name">Node 5: Collation</span><span class="node-type">build</span></div>
     <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node 3: State/process docs</span><span class="node-type">build</span></div>
     <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node 4: Catch-all</span><span class="node-type">build</span></div>
     <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node 2: Brief/carry docs</span><span class="node-type">build</span></div>
+    <div class="node-row"><span class="node-icon">✅</span><span class="node-name">Node 5: Collation</span><span class="node-type">build</span></div>
     </div>
   </div>
 
@@ -198,7 +196,7 @@ f2a12b32-e3dd-4809-9180-6c6b3bc1f22e</div>
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-06-26 15:05 UTC
+    Generated 2026-06-26 15:12 UTC
   </div>
 </body>
 </html>
