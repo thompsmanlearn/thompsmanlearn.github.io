@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T20:22:08.673428+00:00",
+  "generated_at": "2026-06-26T20:29:02.983666+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
@@ -31,5 +31,5 @@
       "outcome": ""
     }
   ],
-  "current_directive": "# Project Node: Node 1: Passing control\n\n## Goal\nWrite the line \"grader-test: Node 1 passed\" to ~/aadp/grader_test.txt using the Bash tool (create the file if it does not exist). Confirm the file was written by reading it back.\n\n## Context\nTrivially passable node. No deps. Used to confirm grader marks passing nodes done via lean_runner (not directive SQL).\n\n## Node ID\n2165e3d0-8202-45c3-ba70-84ac0f98720a"
+  "current_directive": "# Project Node: Node 1: Passing control\n\n## Goal\nWrite the line \"grader-test: Node 1 passed\" to ~/aadp/grader_test.txt using the Bash tool (create the file if it does not exist).\n\nThen run `cat ~/aadp/grader_test.txt` and include the FULL OUTPUT in your response \u2014 paste it verbatim. This is the evidence the grader reads.\n\n## Context\nTrivially passable node. No deps. Used to confirm grader marks passing nodes done via lean_runner (not directive SQL). Do NOT include any SQL to mark this node done \u2014 that is lean_runner's job.\n\n## Node ID\n2165e3d0-8202-45c3-ba70-84ac0f98720a"
 }
