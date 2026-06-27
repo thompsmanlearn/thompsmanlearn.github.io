@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-27T09:00:13.469948+00:00",
+  "generated_at": "2026-06-27T19:15:07.504672+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
-  "lesson_count": 294,
+  "lesson_count": 299,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -21,15 +21,15 @@
       "outcome": ""
     },
     {
-      "date": "2026-06-26",
-      "descriptor": "Session Artifact: Node 2 \u2014 Rigged to Fail",
+      "date": "2026-06-27",
+      "descriptor": "Session Artifact \u2014 B-140: Projects tab \u2014 Anvil UI",
       "outcome": ""
     },
     {
-      "date": "2026-05-25",
-      "descriptor": "Session Artifact \u2014 2026-05-25-2115",
+      "date": "2026-06-27",
+      "descriptor": "2026-06-27 \u2014 B-139: decompose_goal callable",
       "outcome": ""
     }
   ],
-  "current_directive": "# Project Node: Node 2: Rigged to fail\n\n## Goal\n\nAttempt to read the file /nonexistent/grader-proof.txt and include the FULL command output (including any error message) in your response verbatim.\n\nThen confirm in your response whether the file exists and whether it contains the exact string \"grader-proof-12345\".\n\n\n## Context\nRigged-failure node. Depends on Node 1. Acceptance criterion it cannot satisfy \u2014 used to prove grader stops the chain.\n\n## Node ID\ne9fb1b46-3b29-41b7-bdc8-fb0d4578787b"
+  "current_directive": "# Project Node: Define error log data schema and query\nType: write\nNode ID: 5939bc2b-ae52-42b0-b984-1e5fff6668be\nAcceptance criteria: Write spec doc to file defining the query for unresolved error count and recent 3 errors. Print full file contents and the exact SQL/MCP query used."
 }
