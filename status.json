@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T23:04:50.941213+00:00",
+  "generated_at": "2026-06-28T00:20:19.482735+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
@@ -31,5 +31,5 @@
       "outcome": ""
     }
   ],
-  "current_directive": "# Project Node: Define error log data schema and query\n\n## Goal\nWrite spec doc to file defining the query for unresolved error count and recent 3 errors. Print full file contents and the exact SQL/MCP query used.\n\n## Context\nNeed a structured spec for fetching unresolved error count and 3 most recent messages from the data source before building UI.\n\n## Node ID\n5939bc2b-ae52-42b0-b984-1e5fff6668be"
+  "current_directive": "# Project Node: Verify error data source returns expected results\n\n## Goal\nRun the count query and recent-3 query against the live data source. Print verbatim tool output showing the returned count value and the 3 most recent error message rows.\n\n## Context\nConfirm the query from the spec actually returns count and recent errors from Supabase/error store before wiring UI.\n\n## Node ID\n5a4ddc74-5730-46f5-94a2-32a7f7eb367e"
 }
