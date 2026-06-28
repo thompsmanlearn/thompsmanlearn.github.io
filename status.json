@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T00:20:19.482735+00:00",
+  "generated_at": "2026-06-28T00:31:27.396202+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
@@ -22,14 +22,14 @@
     },
     {
       "date": "2026-06-27",
-      "descriptor": "Session Artifact \u2014 B-140: Projects tab \u2014 Anvil UI",
+      "descriptor": "Session Artifact \u2014 Home Tab Error Log Indicator: status stri",
       "outcome": ""
     },
     {
       "date": "2026-06-27",
-      "descriptor": "2026-06-27 \u2014 B-139: decompose_goal callable",
+      "descriptor": "Session Artifact \u2014 B-140: Projects tab \u2014 Anvil UI",
       "outcome": ""
     }
   ],
-  "current_directive": "# Project Node: Verify error data source returns expected results\n\n## Goal\nRun the count query and recent-3 query against the live data source. Print verbatim tool output showing the returned count value and the 3 most recent error message rows.\n\n## Context\nConfirm the query from the spec actually returns count and recent errors from Supabase/error store before wiring UI.\n\n## Node ID\n5a4ddc74-5730-46f5-94a2-32a7f7eb367e"
+  "current_directive": "# Project Node: Implement status strip error indicator badge\n\n## Goal\nWrite/modify component code for the badge logic. Print the full diff or file contents showing red-badge-when-nonzero and green-check-when-zero conditional rendering.\n\n## Context\nBuild the Home tab indicator: red badge with count when non-zero, green checkmark when zero, using verified query.\n\n## Node ID\n3c1d70dd-89ea-41fc-8505-0a8b1e1af9ba"
 }
