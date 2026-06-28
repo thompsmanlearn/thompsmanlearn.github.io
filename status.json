@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-28T09:00:02.433421+00:00",
+  "generated_at": "2026-06-28T15:24:51.078834+00:00",
   "system": "online",
   "mode": "lean",
   "agent_count": 7,
-  "lesson_count": 300,
+  "lesson_count": 301,
   "last_sessions": [
     {
       "date": "chapter2-c",
@@ -26,10 +26,10 @@
       "outcome": ""
     },
     {
-      "date": "2026-06-27",
-      "descriptor": "Session Artifact \u2014 Home Tab Error Log Indicator: status stri",
+      "date": "2026-06-28",
+      "descriptor": "Session Artifact \u2014 Error Indicator End-to-End Test",
       "outcome": ""
     }
   ],
-  "current_directive": "# Project Node: Implement click-to-expand recent errors panel\n\n## Goal\nWrite/modify code adding click handler and expandable panel listing 3 recent errors. Print full file contents/diff of the handler and panel markup.\n\n## Context\nAdd interaction so clicking the indicator expands a panel showing the 3 most recent error messages.\n\n## Node ID\nd990001a-7b2c-4314-878a-3f1014a646ce"
+  "current_directive": "# Project Node: Test and verify indicator behavior end-to-end\n\n## Goal\nRun tests or render checks for zero-state (green check) and non-zero-state (red badge + count) plus expand. Print verbatim test output/render results confirming each state and the 3 listed messages.\n\n## Context\nVerify both zero and non-zero states render correctly and expansion shows the 3 recent errors using real or seeded data.\n\n## Node ID\nc1760eff-3104-4336-a1be-c07decc94cd1"
 }
