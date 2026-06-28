@@ -76,16 +76,16 @@
   <h2>Current Directive</h2>
   <div class="next-work">
     <div class="next-label">&#9654; Active Direction</div>
-    <div class="next-text"># Project Node: Implement status strip error indicator badge
+    <div class="next-text"># Project Node: Implement click-to-expand recent errors panel
 
 ## Goal
-Write/modify component code for the badge logic. Print the full diff or file contents showing red-badge-when-nonzero and green-check-when-zero conditional rendering.
+Write/modify code adding click handler and expandable panel listing 3 recent errors. Print full file contents/diff of the handler and panel markup.
 
 ## Context
-Build the Home tab indicator: red badge with count when non-zero, green checkmark when zero, using verified query.
+Add interaction so clicking the indicator expands a panel showing the 3 most recent error messages.
 
 ## Node ID
-3c1d70dd-89ea-41fc-8505-0a8b1e1af9ba</div>
+d990001a-7b2c-4314-878a-3f1014a646ce</div>
   </div>
 
   <h2>Direction History</h2>
@@ -94,7 +94,13 @@ Build the Home tab indicator: red badge with count when non-zero, green checkmar
       What Bill directed at each session. Most recent first.
     </div>
   </div>
-<div class="card"><div class="card-body">No history yet.</div></div>
+  <div class="card">
+    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
+      <span class="badge" style="font-size:.7rem;">2026-06-28</span>
+      <span style="font-size:.8rem;color:var(--muted);">Session Artifact: Click-to-Expand Recent Errors Panel</span>
+    </div>
+    <div class="card-body" style="margin-top:6px;">Implement click-to-expand recent errors panel. Add click handler and expandable panel listing 3 recent errors. Print full file contents/diff of the handler and panel markup.</div>
+  </div>
 
   <h2>Notable Queue Items</h2>
   <div class="card" style="border-color:var(--border);">
@@ -106,7 +112,7 @@ Build the Home tab indicator: red badge with count when non-zero, green checkmar
   <div class="footer">
     <a href="https://github.com/thompsmanlearn/claudis">claudis repo</a> &nbsp;&middot;&nbsp;
     <a href="status.json">status.json</a> &nbsp;&middot;&nbsp;
-    Generated 2026-06-28 00:31 UTC
+    Generated 2026-06-28 04:58 UTC
   </div>
 </body>
 </html>
